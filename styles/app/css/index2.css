@@ -1,0 +1,36 @@
+@charset "utf-8";
+/* CSS Document */
+html,body,div,p,span,a,ul,li,ol,h1,h2,h3,h4,h5,h6,img,b,i{margin:0;padding: 0;}
+ul,ol,li{ list-style: none;}
+img { border: 0 none;}
+h1, h2, h3, h4, h5, h6 {font-size: 100%; font-weight: normal;}
+body{ font-size: 12px;background-color:#F5F3ED;}
+a{text-decoration:none;} 
+
+#head{ height:79px; background-color:#fff;}
+.header{width:990px; margin:0 auto; height:79px; line-height:80px;}
+.header h1{ float:left;}
+.logo{ width:263px; height:79px;
+/*  background:url(../images/logo.jpg); */
+font-size: 2rem;display:block;}
+.menu{ float:right; color:#C2C2C2; text-align:right;}
+.menu a,.menu a:hover{ font:normal 16px/79px microsoft yahei,arial; margin:0 20px; color:#000;}
+.download_btn{ background:url(../images/bg2.png); width:230px; height:61px; display:block;}
+.ios{ background-position: -100px 0;}
+.android{ background-position: -100px -61px; margin-top:20px;}
+.code_bg{ width:125px; height:125px; padding:7px; border:1px solid #c4c4c4; background-color:#fff; display:block; float:right;opacity: 0.5; filter: alpha(opacity=50);}
+.code{ width:125px; height:125px; background:url(../images/bg2.png) no-repeat -100px -124px; display:block; position:absolute;top:8px; left:261px;}
+#banner{height:620px; background:url(../images/banner2.jpg) no-repeat center top; position:relative;}
+.download{ width:394px; height:192px; position:absolute; left:50%; top:350px; margin-left:66px;}
+.content{ width:928px; margin:0 auto;}
+.content li{ width: 208px; padding:0 50px; border-left:1px dotted #A5A5A5; height:190px; margin-top:30px; float:left;}
+.content li.final{ border-right:1px dotted #A5A5A5;}
+.book_icon{ width:83px; height:83px; background:url(../images/bg2.png) no-repeat; margin:10px auto 0 auto; display:block;}
+.read{ background-position:0 0;}
+.down{ background-position:0 -83px;}
+.change{ background-position:0 -166px;}
+.content h3{ font:20px/24px microsoft yahei,arial; text-align:center; padding:10px 0; color:#6e6e6e;}
+.content p{font:12px/24px microsoft yahei,arial; color:#696969;}
+
+.foot{ padding-top:40px; clear:both;}
+.foot p{ text-align:center; line-height:24px; color:#999;font:12px/24px microsoft yahei,arial;}

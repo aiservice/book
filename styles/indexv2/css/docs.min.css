@@ -1,0 +1,40 @@
+/*!
+ * Bootstrap Docs (http://getbootstrap.com)
+ * Copyright 2011-2014 Twitter, Inc.
+ * Licensed under the Creative Commons Attribution 3.0 Unported License. For
+ * details, see http://creativecommons.org/licenses/by/3.0/.
+ */body {
+    position: relative
+}
+
+.zero-clipboard {
+    position: relative;
+    display: none
+}
+
+.btn-clipboard {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 10;
+    display: block;
+    padding: 0 8px;
+    font-size: 12px;
+    color: #777;
+    cursor: pointer;
+    background-color: #fff;
+    border: 1px solid #e1e1e8;
+    border-radius: 0 4px 0 4px
+}
+
+.btn-clipboard-hover {
+    color: #fff;
+    background-color: #dd4814;
+    border-color: #bf3e11;
+}
+
+@media (min-width:768px) {
+    .zero-clipboard {
+        display: block
+    }
+}

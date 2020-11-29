@@ -1,0 +1,14 @@
+M._confirm("是否确认删除?",["取消",""],["确定",""],function(){
+		$.post("?method=delSc&id="+id, 
+			function(datas) {
+			if (datas.ret != 0) {
+				M._alert('恭喜删除成功！',2000);
+				setTimeout(function(){
+					window.location.reload();
+				},1000); 
+			} else {
+				M._alert('对不起，删除失败！');
+			}
+	 	});
+	},function(){
+	});

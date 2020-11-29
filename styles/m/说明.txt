@@ -1,0 +1,18 @@
+#258603 -> #0059a5
+
+#3f9b1e -> #116bb7
+
+.searchBt {
+	background: #2b9de6;
+	border: 1px solid #2a90e5;
+	height: 37px;
+	width: 46px;
+	position: absolute;
+	right: 0;
+	top: 0;
+	-webkit-border-bottom-right-radius: 4px;
+	-webkit-border-top-right-radius: 4px;
+	border-bottom-right-radius: 4px;
+	border-top-right-radius: 4px;
+	-webkit-box-shadow: 1px 1px 1px #41a8ea inset;
+}

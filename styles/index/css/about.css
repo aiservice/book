@@ -1,0 +1,30 @@
+.copyright_left {float: left;width: 200px;}
+.copyright_left_list_bottom {background-image: url("../images/copyright_other_bg.jpg");height: 111px;width: 200px;}
+.copyright_left_list {background-image: url("../images/copyright_across_line.jpg");border-top: 1px solid #C4D2DB;padding-left: 2px;width: 198px;}
+.copyright_left_list ul {list-style-type: none;margin: 0;padding: 0;}
+.copyright_left_list ul li {list-style-type: none;margin: 0;padding: 0;text-align: center;}
+.copyright_left_list li {background-image: url("../images/menu_02.png");line-height: 35px;overflow: hidden;width: 196px;}
+.copyright_left_list li:hover {background-image: url("../images/menu_01.png");}
+.copyright_left_list li.active {background-image: url("../images/menu_01.png");}
+.copyright_right {background: none repeat scroll 0 0 #FFFFFF;border: 1px solid #C2E4FF;float: left;margin-left: 10px;width: 748px;}
+.copyright_right_con {background: url("../images/copyright_con_bg.jpg") repeat-x scroll 0 0 transparent;padding: 10px;}
+.copyright_right_con ul {list-style-type: none;margin: 0;padding: 0;}
+.copyright_right_con ul li {line-height: 25px;list-style-type: none;margin: 0;padding: 0;}
+.copyright_right_con ul li.copyright_biaoti {border-bottom: 1px solid #E0E0E0;line-height: 40px;}
+.copyright_right_con ul li.copyright_line {background-color: #E0E0E0;width: 725px;}
+
+.helpcontent{color:#ff0000; font-size:12px; font-family:Verdana,宋体; line-height:22px; padding-left:24px;}
+
+.site_title{ background-color:#00CCFF;}
+.sitemap_item {color: #FFFFFF; font-weight: bold; }
+.copyrightblue{ color: #2F688C;font-size: 16px;font-weight: bold;}
+.copyrightlink{color: #0097C9; font-size: 14px; text-decoration: none;}
+.copyrightlink:hover{ color:#FF8A00;}
+.grayboldcopyright{color: #666666;font-size: 14px;font-weight: bold;}
+
+#link{ margin:5px auto 5px auto; width:695px; border:1px solid #dfdfdf; background-color:#F6F6F6; padding:15px;}
+.link_img{}
+.link_qq{color: #636363; margin-left: 10px;}
+.link_a{line-height:30px;}
+.link_a a{color:#2f688c; text-decoration: none; margin-left:10px;white-space: nowrap;}
+.link_a a:hover{color:#fe8a01; text-decoration: none;}
