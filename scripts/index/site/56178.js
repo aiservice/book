@@ -6,6 +6,6 @@ g_data_ad_client = "ca-pub-4603891518763240";
 filterUrls = ["cate-5008","category-5008"];
 siteGUrls = ["shitou"];
 // siteAlimamaUrls = ["shitou"];
-siteOtherUrls = ["xxx"];
+siteOtherUrls = ["shitou"];
 
 third_opacity_css  ="opacity: 0.3;"
