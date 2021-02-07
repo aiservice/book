@@ -301,10 +301,16 @@ function redirBook(url) {
         if (!is_mobile && is_mobile_url) { //go pc url
             location.href = url.replace("m/author-", "author-");
         }
-    } else if (url.indexOf("/top") !== -1 && !is_mobile_url) {
-        //go mobile url
-        var spUrl = url.split("/top");
-        location.href = spUrl[0] + "/m/top.html";
+    } else if (url.indexOf("/top") !== -1) {
+        if (is_mobile && !is_mobile_url) {//go mobile url
+            var spUrl = url.split("/top");
+            location.href = spUrl[0] + "/m/top.html";
+        }
+        if (!is_mobile && is_mobile_url) { //go pc url
+            var spUrl = url.split("/m/")
+            var newUrl = spUrl[0] + "/top.html";
+            location.href = newUrl;
+        }
     } else if (url.indexOf("/bookshelfmy.html") !== -1) {
         if (is_mobile && !is_mobile_url) {//go mobile url
             var spUrl = url.split("/bookshelfmy.html");
