@@ -1,14 +1,16 @@
-if(typeof jQuery !== 'undefined'){
+if (typeof jQuery !== 'undefined') {
     $(document).ready(function () {
         var selectLanguage = '<select name="language" id="language"> <option value="">Language</option> <option value="zh">中文</option> <option value="en">English</option> </select>';
-        $(".h_top_txt").find("ul").append("<li>"+selectLanguage+"</li>")
-        $(".footer-copy").append("&nbsp;"+selectLanguage);
-        var $language =  $("#language");
-        $language.change(function(){
+        $(".h_top_txt").find("ul").append("<li>" + selectLanguage + "</li>")
+        $(".footer-copy").append("&nbsp;" + selectLanguage);
+        var $language = $("#language");
+        $language.change(function () {
             var lang = $(this).val();
-            if(lang !== ""){
+            if (lang !== "") {
                 window.localStorage.setItem('cookie_lang', lang);
-                $.post("/CsAjax.do?method=setcookie", {"key":"cookie_lang", "value":lang}, function(c) {window.location.reload();});
+                $.post("/CsAjax.do?method=setcookie", {"key": "cookie_lang", "value": lang}, function (c) {
+                    window.location.reload();
+                });
             }
         });
 
@@ -27,7 +29,7 @@ if(typeof jQuery !== 'undefined'){
     });
 }
 
-function showNotice(){
+function showNotice() {
     try {
         // if (typeof site_id != "undefined"&&site_id===56178) {
         //     if (!window.localStorage.getItem('site_close')) {
@@ -43,18 +45,18 @@ function showNotice(){
         var privacy_policy;
         if (typeof is_english != "undefined" && is_english) {
             privacy_policy = $('<div style=" color: #fff; background-color: #3b4045; left: 0; right: 0; bottom: 0; align-items: center; padding: 1em 1.8em; width: 100%; -ms-flex-direction: row; flex-direction: row; position: fixed; overflow: hidden; box-sizing: border-box; font-family: Helvetica,Calibri,Arial,sans-serif; font-size: 16px; line-height: 1.5em; display: -ms-flexbox; display: flex; -ms-flex-wrap: nowrap; flex-wrap: nowrap; z-index: 9999; "><span id="cookieconsent:desc" class="cc-message" style=" flex: 1; ">This website uses cookies to ensure you get the best experience on our website. <a href="/privacyPolicy.html" target="_blank" style=" opacity: .8; display: inline-block; padding: .2em; color: #fff; text-decoration: underline; ">Click for the cookie policy.</a></span><div class="cc-compliance" style=" display: flex; -ms-flex-align: center; align-items: center; -ms-flex-line-pack: justify; align-content: space-between; "><a style=" min-width: 120px; color: #44719a; background-color: rgb(255, 255, 255); border-color: transparent; border-radius: 5px; flex: 1; display: block; padding: .4em .4em; font-size: .9em; font-weight: 700; border-width: 2px; border-style: solid; text-align: center; white-space: nowrap; ">Got it!</a></div></div>');
-        }else{
+        } else {
             privacy_policy = $('<div style=" color: #fff; background-color: #3b4045; left: 0; right: 0; bottom: 0; align-items: center; padding: 1em 1.8em; width: 100%; -ms-flex-direction: row; flex-direction: row; position: fixed; overflow: hidden; box-sizing: border-box; font-family: Helvetica,Calibri,Arial,sans-serif; font-size: 16px; line-height: 1.5em; display: -ms-flexbox; display: flex; -ms-flex-wrap: nowrap; flex-wrap: nowrap; z-index: 9999; "><span id="cookieconsent:desc" class="cc-message" style=" flex: 1; ">本网站使用cookie来确保您在我们的网站上获得最佳体验。<a href="/privacyPolicy.html" target="_blank" style=" opacity: .8; display: inline-block; padding: .2em; color: #fff; text-decoration: underline; ">单击以获取Cookie政策。</a></span><div class="cc-compliance" style=" display: flex; -ms-flex-align: center; align-items: center; -ms-flex-line-pack: justify; align-content: space-between; "><a style=" min-width: 120px; color: #44719a; background-color: rgb(255, 255, 255); border-color: transparent; border-radius: 5px; flex: 1; display: block; padding: .4em .4em; font-size: .9em; font-weight: 700; border-width: 2px; border-style: solid; text-align: center; white-space: nowrap; ">我知道了</a></div></div>');
         }
         if (!window.localStorage.getItem('site_privacy_policy')) {
             $('body').append(privacy_policy);
-            privacy_policy.click(function(e){
+            privacy_policy.click(function (e) {
                 e.stopPropagation();
                 privacy_policy.remove();
                 window.localStorage.setItem('site_privacy_policy', 1);
             });
         }
-    }catch (e) {
+    } catch (e) {
         console.log(e)
     }
 }
@@ -63,16 +65,18 @@ function showNotice(){
 function isMobile() {
     return ua().match(/iphone|ipad|ipod|android|blackberry|iemobile|wpdesktop/i)
 }
+
 function ua() {
     return navigator.userAgent.toLowerCase()
 }
-function isWechat(){
+
+function isWechat() {
     return ua().match(/MicroMessenger/i);
 }
 
-function gEnabledAds(url){
-    if(typeof filterUrls != "undefined"){
-        for(var i = 0, len = filterUrls.length; i < len; i++){
+function gEnabledAds(url) {
+    if (typeof filterUrls != "undefined") {
+        for (var i = 0, len = filterUrls.length; i < len; i++) {
             console.log(filterUrls[i]);
             if (url.indexOf(filterUrls[i]) !== -1) {
                 return false;
@@ -81,9 +85,10 @@ function gEnabledAds(url){
     }
     return true;
 }
-function siteEnabledG(url){
-    if(typeof siteGUrls != "undefined"){
-        for(var i = 0, len = siteGUrls.length; i < len; i++){
+
+function siteEnabledG(url) {
+    if (typeof siteGUrls != "undefined") {
+        for (var i = 0, len = siteGUrls.length; i < len; i++) {
             console.log(siteGUrls[i]);
             if (url.indexOf(siteGUrls[i]) !== -1) {
                 return true;
@@ -92,9 +97,10 @@ function siteEnabledG(url){
     }
     return false;
 }
-function siteEnabledB(url){
-    if(typeof siteBUrls != "undefined"){
-        for(var i = 0, len = siteBUrls.length; i < len; i++){
+
+function siteEnabledB(url) {
+    if (typeof siteBUrls != "undefined") {
+        for (var i = 0, len = siteBUrls.length; i < len; i++) {
             console.log(siteBUrls[i]);
             if (url.indexOf(siteBUrls[i]) !== -1) {
                 return true;
@@ -104,9 +110,9 @@ function siteEnabledB(url){
     return false;
 }
 
-function siteEnabledE(url){
-    if(typeof siteEUrls != "undefined"){
-        for(var i = 0, len = siteEUrls.length; i < len; i++){
+function siteEnabledE(url) {
+    if (typeof siteEUrls != "undefined") {
+        for (var i = 0, len = siteEUrls.length; i < len; i++) {
             console.log(siteEUrls[i]);
             if (url.indexOf(siteEUrls[i]) !== -1) {
                 return true;
@@ -117,41 +123,44 @@ function siteEnabledE(url){
 }
 
 function loadGoogleAds() {
-    if(g_enabled_ads){
+    if (g_enabled_ads) {
         document.write('<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>');
-        document.write('<ins class="adsbygoogle" style="display:block" data-ad-client="'+g_data_ad_client+'" data-ad-slot="'+g_data_ad_slot_auto+'" data-ad-format="auto" data-full-width-responsive="true"></ins>');
+        document.write('<ins class="adsbygoogle" style="display:block" data-ad-client="' + g_data_ad_client + '" data-ad-slot="' + g_data_ad_slot_auto + '" data-ad-format="auto" data-full-width-responsive="true"></ins>');
         document.write('<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>');
     }
 }
+
 function loadGoogleAds468() {
-    if(g_enabled_ads) {
+    if (g_enabled_ads) {
         document.write('<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>');
-        document.write('<ins class="adsbygoogle" style="display:inline-block;width:468px;height:60px" data-ad-client="'+g_data_ad_client+'" data-ad-slot="'+g_data_ad_slot_468+'"></ins>');
+        document.write('<ins class="adsbygoogle" style="display:inline-block;width:468px;height:60px" data-ad-client="' + g_data_ad_client + '" data-ad-slot="' + g_data_ad_slot_468 + '"></ins>');
         document.write('<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>');
     }
 }
+
 function loadGoogleAdsRecommend() {
-    if(g_enabled_ads) {
+    if (g_enabled_ads) {
         document.write('<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>');
-        document.write('<ins class="adsbygoogle" style="display:block" data-ad-format="autorelaxed" data-ad-client="'+g_data_ad_client+'" data-ad-slot="' + g_data_ad_slot_recommend + '"></ins>');
+        document.write('<ins class="adsbygoogle" style="display:block" data-ad-format="autorelaxed" data-ad-client="' + g_data_ad_client + '" data-ad-slot="' + g_data_ad_slot_recommend + '"></ins>');
         document.write('<script> (adsbygoogle = window.adsbygoogle || []).push({});</script>');
     }
 }
+
 function loadBaiduAds(loc) {
     var tmpId = b_data_ad_mobile;
-    if((loc === "cms_left_bottom" && !isMobile()) || loc === "pc_left_bottom"){
+    if ((loc === "cms_left_bottom" && !isMobile()) || loc === "pc_left_bottom") {
         tmpId = b_data_ad_336;
     }
-    if(loc === "cms_right_bottom"){
+    if (loc === "cms_right_bottom") {
         tmpId = b_data_ad_336_xuanting;
     }
-    if(loc === "pc_468"){
+    if (loc === "pc_468") {
         tmpId = b_data_ad_468;
     }
-    if(loc === "pc_bottom"){
+    if (loc === "pc_bottom") {
         tmpId = b_data_ad_1024;
     }
-    if(loc === "pc_right_top"){
+    if (loc === "pc_right_top") {
         tmpId = b_data_ad_250;
     }
     (function () {
@@ -166,7 +175,7 @@ function loadBaiduAds(loc) {
 }
 
 function loadExoAds(loc) {
-    loadExoAdsTemplate(e_data_ad_300,"300","250");
+    loadExoAdsTemplate(e_data_ad_300, "300", "250");
     // if((loc === "cms_left_bottom") || loc === "pc_left_bottom"){
     //     loadExoAdsTemplate(e_data_ad_300,"300","250");
     // }
@@ -190,18 +199,18 @@ function loadExoAds(loc) {
     // }
 }
 
-function loadExoAdsTemplate(idzone,width,height) {
+function loadExoAdsTemplate(idzone, width, height) {
     var opacity = "";
     if (typeof third_opacity_css != "undefined") {
         opacity = third_opacity_css;
     }
     ad_idzone = idzone, ad_width = width, ad_height = height;
-    document.write('<div style="'+opacity+'">');
+    document.write('<div style="' + opacity + '">');
     document.write('<script type="text/javascript" src="https://a.exdynsrv.com/ads.js"></script>');
     document.write('</div>');
 }
 
-function loadOther(){
+function loadOther() {
     // if(isMobile()&&!isWechat()){
     //     document.write('<div> <iframe id="ads_iframe" src="/ads.html" style="width: 100%; border: none; height: auto;"></iframe></div>');
     //
@@ -234,48 +243,142 @@ function getHostName(url) {
     }
 }
 
-function goNewDomain(){
-    if (typeof app_domain != "undefined" && typeof site_id != "undefined"&& typeof cur_location_url != "undefined") {
-        if(!isLocal(cur_location_url)){
+function goNewDomain() {
+    if (typeof app_domain != "undefined" && typeof site_id != "undefined" && typeof cur_location_url != "undefined") {
+        if (!isLocal(cur_location_url)) {
             var cur_host = getHostName(cur_location_url);
             if (cur_host && (cur_host !== app_domain)) {
-                location.href = cur_location_url.replace(cur_host,app_domain);
+                location.href = cur_location_url.replace(cur_host, app_domain);
+            }
+        }
+        redirBook(cur_location_url);
+    }
+}
+
+function redirBook(url) {
+    var redirArray = ["/book/", "/read/"];
+    var isMobileUrl = isMobileUrl(url);
+    var isMobile = isMobile();
+    for (var i = 0, len = redirArray.length; i < len; i++) {
+        var split = redirArray[i]
+        if (url.indexOf(split) !== -1) {
+            if (isMobile && !isMobileUrl) {//go mobile url
+                var spUrl = url.split(split);
+                var newUrl = spUrl[0] + split + "m/" + spUrl[1];
+                console.log('newUrlMobile:', newUrl);
+                location.href = newUrl;
+                return;
+            }
+            if (!isMobile && isMobileUrl) {//go pc url
+                var spUrl = url.split("/m/");
+                var newUrl = spUrl[0] + "/" + spUrl[1];
+                console.log('newUrlPC:', newUrl);
+                location.href = newUrl;
+                return;
             }
         }
     }
+    if (url.indexOf("category-") !== -1 && isMobile) {
+        location.href = url.replace("category-", "m/cate-");
+    } else if (url.indexOf("cate-") !== -1 && !isMobile) {
+        location.href = url.replace("m/cate-", "category-");
+    } else if (url.indexOf("/search.html") !== -1) {
+        if (isMobile && !isMobileUrl) {//go mobile url
+            var spUrl = url.split("/search.html");
+            var newUrl = spUrl[0] + "/m" + "/search.html" + spUrl[1];
+            location.href = newUrl;
+        }
+        if (!isMobile && isMobileUrl) { //go pc url
+            var spUrl = url.split("/m/")
+            var newUrl = spUrl[0] + "/" + spUrl[1];
+            console.log('newUrlPC:', newUrl);
+            location.href = newUrl;
+        }
+    } else if (url.indexOf("author-") !== -1) {
+        if (isMobile && !isMobileUrl) {//go mobile url
+            location.href = url.replace("author-", "m/author-");
+        }
+        if (!isMobile && isMobileUrl) { //go pc url
+            location.href = url.replace("m/author-", "author-");
+        }
+    } else if (url.indexOf("/top") !== -1 && !isMobileUrl) {
+        //go mobile url
+        var spUrl = url.split("/top");
+        location.href = spUrl[0] + "/m/top.html";
+    } else if (url.indexOf("/bookshelfmy.html") !== -1) {
+        if (isMobile && !isMobileUrl) {//go mobile url
+            var spUrl = url.split("/bookshelfmy.html");
+            location.href = spUrl[0] + "/m/bookshelfmy.html";
+        }
+        if (!isMobile && isMobileUrl) { //go pc url
+            var spUrl = url.split("/m/")
+            var newUrl = spUrl[0] + "/" + spUrl[1];
+            console.log('newUrlPC:', newUrl);
+            location.href = newUrl;
+        }
+    } else if (url.indexOf("/index.html") !== -1) {
+        if (isMobile && !isMobileUrl) {//go mobile url
+            var spUrl = url.split("/index.html");
+            location.href = spUrl[0] + "/m/index.html";
+        }
+        if (!isMobile && isMobileUrl) { //go pc url
+            var spUrl = url.split("/m/")
+            var newUrl = spUrl[0] + "/" + spUrl[1];
+            console.log('newUrlPC:', newUrl);
+            location.href = newUrl;
+        }
+    } else if (url.indexOf("/login.html") !== -1) {
+        if (isMobile && !isMobileUrl) {//go mobile url
+            var spUrl = url.split("/login.html");
+            location.href = spUrl[0] + "/m/mlogin.html";
+        }
+        if (!isMobile && isMobileUrl) { //go pc url
+            var spUrl = url.split("/m/")
+            var newUrl = spUrl[0] + "/" + "login.html";
+            console.log('newUrlPC:', newUrl);
+            location.href = newUrl;
+        }
+    }
 }
+
+function isMobileUrl(url) {
+    return url.indexOf("/m/") !== -1
+}
+
 function isLocal(url) {
     return url.indexOf("localhost") !== -1 || url.indexOf("192.168.") !== -1;
 
 }
-function validateSite(){
+
+function validateSite() {
     try {
-        if(self !== top){
+        if (self !== top) {
             top.location = self.location;
         }
-    }catch (e) {
+    } catch (e) {
         console.log(e)
     }
 }
+
 validateSite();
 cur_location_url = window.location.href;
 goNewDomain();
 g_enabled_ads = gEnabledAds(cur_location_url);
-console.log("g_enabled_ads:"+g_enabled_ads);
+console.log("g_enabled_ads:" + g_enabled_ads);
 site_enabled_g = siteEnabledG(cur_location_url);
-console.log("site_enabled_g:"+site_enabled_g);
+console.log("site_enabled_g:" + site_enabled_g);
 site_enabled_b = siteEnabledB(cur_location_url);
-console.log("site_enabled_b:"+site_enabled_b);
+console.log("site_enabled_b:" + site_enabled_b);
 site_enabled_e = siteEnabledE(cur_location_url);
-console.log("site_enabled_e:"+site_enabled_e);
+console.log("site_enabled_e:" + site_enabled_e);
 
 site_enabled_other = siteEnabledOther(cur_location_url);
-console.log("site_enabled_other:"+site_enabled_other);
+console.log("site_enabled_other:" + site_enabled_other);
 site_enabled_alimama = siteEnabledAlimama(cur_location_url);
 
-function siteEnabledOther(url){
-    if(typeof siteOtherUrls != "undefined"){
-        for(var i = 0, len = siteOtherUrls.length; i < len; i++){
+function siteEnabledOther(url) {
+    if (typeof siteOtherUrls != "undefined") {
+        for (var i = 0, len = siteOtherUrls.length; i < len; i++) {
             console.log(siteOtherUrls[i]);
             if (url.indexOf(siteOtherUrls[i]) !== -1) {
                 return true;
@@ -284,9 +387,10 @@ function siteEnabledOther(url){
     }
     return false;
 }
-function siteEnabledAlimama(url){
-    if(typeof siteAlimamaUrls != "undefined"){
-        for(var i = 0, len = siteAlimamaUrls.length; i < len; i++){
+
+function siteEnabledAlimama(url) {
+    if (typeof siteAlimamaUrls != "undefined") {
+        for (var i = 0, len = siteAlimamaUrls.length; i < len; i++) {
             console.log(siteAlimamaUrls[i]);
             if (url.indexOf(siteAlimamaUrls[i]) !== -1) {
                 return true;
@@ -295,6 +399,7 @@ function siteEnabledAlimama(url){
     }
     return false;
 }
+
 function loadThirdAds(loc) {
     if (isMobile() && !isWechat()) {
         var opacity = "";
@@ -326,35 +431,37 @@ function loadThirdAds(loc) {
     // }
 }
 
-function loadThirdAdsTemplate(id,mobile) {
+function loadThirdAdsTemplate(id, mobile) {
     if (typeof id != "undefined" || id != "") {
         var opacity = "";
         if (typeof third_opacity_css != "undefined") {
             opacity = third_opacity_css;
         }
-        if(mobile){
-            document.write('<div style="'+opacity+'"><ins style="display:none!important" id="' + id + '"></ins></div>');
-        }else{
-            document.write('<div style="display: inline-block;'+opacity+'"><ins style="display:none!important" id="' + id + '"></ins></div>');
+        if (mobile) {
+            document.write('<div style="' + opacity + '"><ins style="display:none!important" id="' + id + '"></ins></div>');
+        } else {
+            document.write('<div style="display: inline-block;' + opacity + '"><ins style="display:none!important" id="' + id + '"></ins></div>');
         }
         (window.adbyunion = window.adbyunion || []).push(id);
         document.write('<script async defer src="https://www.fjsjsj.com/o.js"></script>');
     }
 }
+
 function loadAlimama(loc) {
-    var id = "ads_iframe_"+ loc;
+    var id = "ads_iframe_" + loc;
     var w = 336;
     var h = 280;
-    if(loc === "pc_right_top"){
-         w = 250;
-         h = 250;
+    if (loc === "pc_right_top") {
+        w = 250;
+        h = 250;
     }
-    document.write('<div> <iframe id="'+id+'" src="//cdn.cms.moujishu.com/ads.html?loc='+loc+'&id='+id+'&w='+w+'&h='+h+'" style="width: '+w+'px; border: none; height: '+h+'px;"></iframe></div>');
+    document.write('<div> <iframe id="' + id + '" src="//cdn.cms.moujishu.com/ads.html?loc=' + loc + '&id=' + id + '&w=' + w + '&h=' + h + '" style="width: ' + w + 'px; border: none; height: ' + h + 'px;"></iframe></div>');
     // loadAlimamaTemplate(alimama_data_ad_336);
 }
+
 function loadAlimamaTemplate(id) {
     if (typeof id != "undefined" || id != "") {
-        document.write('<script src="http://wm.lrswl.com/page/s.php?s='+id+'&w=300&h=250"></script>');
+        document.write('<script src="http://wm.lrswl.com/page/s.php?s=' + id + '&w=300&h=250"></script>');
         // document.write('<a style="display:none!important" id="tanx-a-'+id+'"></a>');
         // tanx_s = document.createElement("script");
         // tanx_s.type = "text/javascript";
@@ -366,7 +473,8 @@ function loadAlimamaTemplate(id) {
         // if(tanx_h)tanx_h.insertBefore(tanx_s,tanx_h.firstChild);
     }
 }
-function formatDate(){
+
+function formatDate() {
     // 获取当前日期
     var date = new Date();
 
