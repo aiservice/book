@@ -257,19 +257,19 @@ function goNewDomain() {
 
 function redirBook(url) {
     var redirArray = ["/book/", "/read/"];
-    var isMobileUrl = is_mobile_url(url);
-    var isMobile = isMobile();
+    var is_mobile_url = isMobileUrl(url);
+    var is_mobile = isMobile();
     for (var i = 0, len = redirArray.length; i < len; i++) {
         var split = redirArray[i]
         if (url.indexOf(split) !== -1) {
-            if (isMobile && !isMobileUrl) {//go mobile url
+            if (is_mobile && !is_mobile_url) {//go mobile url
                 var spUrl = url.split(split);
                 var newUrl = spUrl[0] + split + "m/" + spUrl[1];
                 console.log('newUrlMobile:', newUrl);
                 location.href = newUrl;
                 return;
             }
-            if (!isMobile && isMobileUrl) {//go pc url
+            if (!is_mobile && is_mobile_url) {//go pc url
                 var spUrl = url.split("/m/");
                 var newUrl = spUrl[0] + "/" + spUrl[1];
                 console.log('newUrlPC:', newUrl);
@@ -278,61 +278,61 @@ function redirBook(url) {
             }
         }
     }
-    if (url.indexOf("category-") !== -1 && isMobile) {
+    if (url.indexOf("category-") !== -1 && is_mobile) {
         location.href = url.replace("category-", "m/cate-");
-    } else if (url.indexOf("cate-") !== -1 && !isMobile) {
+    } else if (url.indexOf("cate-") !== -1 && !is_mobile) {
         location.href = url.replace("m/cate-", "category-");
     } else if (url.indexOf("/search.html") !== -1) {
-        if (isMobile && !isMobileUrl) {//go mobile url
+        if (is_mobile && !is_mobile_url) {//go mobile url
             var spUrl = url.split("/search.html");
             var newUrl = spUrl[0] + "/m" + "/search.html" + spUrl[1];
             location.href = newUrl;
         }
-        if (!isMobile && isMobileUrl) { //go pc url
+        if (!is_mobile && is_mobile_url) { //go pc url
             var spUrl = url.split("/m/")
             var newUrl = spUrl[0] + "/" + spUrl[1];
             console.log('newUrlPC:', newUrl);
             location.href = newUrl;
         }
     } else if (url.indexOf("author-") !== -1) {
-        if (isMobile && !isMobileUrl) {//go mobile url
+        if (is_mobile && !is_mobile_url) {//go mobile url
             location.href = url.replace("author-", "m/author-");
         }
-        if (!isMobile && isMobileUrl) { //go pc url
+        if (!is_mobile && is_mobile_url) { //go pc url
             location.href = url.replace("m/author-", "author-");
         }
-    } else if (url.indexOf("/top") !== -1 && !isMobileUrl) {
+    } else if (url.indexOf("/top") !== -1 && !is_mobile_url) {
         //go mobile url
         var spUrl = url.split("/top");
         location.href = spUrl[0] + "/m/top.html";
     } else if (url.indexOf("/bookshelfmy.html") !== -1) {
-        if (isMobile && !isMobileUrl) {//go mobile url
+        if (is_mobile && !is_mobile_url) {//go mobile url
             var spUrl = url.split("/bookshelfmy.html");
             location.href = spUrl[0] + "/m/bookshelfmy.html";
         }
-        if (!isMobile && isMobileUrl) { //go pc url
+        if (!is_mobile && is_mobile_url) { //go pc url
             var spUrl = url.split("/m/")
             var newUrl = spUrl[0] + "/" + spUrl[1];
             console.log('newUrlPC:', newUrl);
             location.href = newUrl;
         }
     } else if (url.indexOf("/index.html") !== -1) {
-        if (isMobile && !isMobileUrl) {//go mobile url
+        if (is_mobile && !is_mobile_url) {//go mobile url
             var spUrl = url.split("/index.html");
             location.href = spUrl[0] + "/m/index.html";
         }
-        if (!isMobile && isMobileUrl) { //go pc url
+        if (!is_mobile && is_mobile_url) { //go pc url
             var spUrl = url.split("/m/")
             var newUrl = spUrl[0] + "/" + spUrl[1];
             console.log('newUrlPC:', newUrl);
             location.href = newUrl;
         }
     } else if (url.indexOf("/login.html") !== -1) {
-        if (isMobile && !isMobileUrl) {//go mobile url
+        if (is_mobile && !is_mobile_url) {//go mobile url
             var spUrl = url.split("/login.html");
             location.href = spUrl[0] + "/m/mlogin.html";
         }
-        if (!isMobile && isMobileUrl) { //go pc url
+        if (!is_mobile && is_mobile_url) { //go pc url
             var spUrl = url.split("/m/")
             var newUrl = spUrl[0] + "/" + "login.html";
             console.log('newUrlPC:', newUrl);
@@ -341,7 +341,7 @@ function redirBook(url) {
     }
 }
 
-function is_mobile_url(url) {
+function isMobileUrl(url) {
     return url.indexOf("/m/") !== -1
 }
 
