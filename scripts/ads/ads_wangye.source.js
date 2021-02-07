@@ -264,7 +264,7 @@ function redirBook(url) {
         if (url.indexOf(split) !== -1) {
             if (is_mobile && !is_mobile_url) {//go mobile url
                 var spUrl = url.split(split);
-                var newUrl = spUrl[0] + split + "m/" + spUrl[1];
+                var newUrl = spUrl[0] + "/m" + split + spUrl[1];
                 console.log('newUrlMobile:', newUrl);
                 location.href = newUrl;
                 return;
