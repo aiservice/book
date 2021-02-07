@@ -257,7 +257,7 @@ function goNewDomain() {
 
 function redirBook(url) {
     var redirArray = ["/book/", "/read/"];
-    var isMobileUrl = isMobileUrl(url);
+    var isMobileUrl = url_contains(url);
     var isMobile = isMobile();
     for (var i = 0, len = redirArray.length; i < len; i++) {
         var split = redirArray[i]
@@ -341,7 +341,7 @@ function redirBook(url) {
     }
 }
 
-function isMobileUrl(url) {
+function url_contains(url) {
     return url.indexOf("/m/") !== -1
 }
 
