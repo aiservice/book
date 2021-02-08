@@ -269,59 +269,59 @@ function redirBook(url) {
                 location.href = newUrl;
                 return;
             }
-            if (!is_mobile && is_mobile_url) {//go pc url
-                var spUrl = url.split("/m/");
-                var newUrl = spUrl[0] + "/" + spUrl[1];
-                console.log('newUrlPC:', newUrl);
-                location.href = newUrl;
-                return;
-            }
+            // if (!is_mobile && is_mobile_url) {//go pc url
+            //     var spUrl = url.split("/m/");
+            //     var newUrl = spUrl[0] + "/" + spUrl[1];
+            //     console.log('newUrlPC:', newUrl);
+            //     location.href = newUrl;
+            //     return;
+            // }
         }
     }
     if (url.indexOf("category-") !== -1 && is_mobile) {
         location.href = url.replace("category-", "m/cate-");
     } else if (url.indexOf("cate-") !== -1 && !is_mobile) {
-        location.href = url.replace("m/cate-", "category-");
+        //location.href = url.replace("m/cate-", "category-");
     } else if (url.indexOf("/search.html") !== -1) {
         if (is_mobile && !is_mobile_url) {//go mobile url
             var spUrl = url.split("/search.html");
             var newUrl = spUrl[0] + "/m" + "/search.html" + spUrl[1];
             location.href = newUrl;
         }
-        if (!is_mobile && is_mobile_url) { //go pc url
-            var spUrl = url.split("/m/")
-            var newUrl = spUrl[0] + "/" + spUrl[1];
-            console.log('newUrlPC:', newUrl);
-            location.href = newUrl;
-        }
+        // if (!is_mobile && is_mobile_url) { //go pc url
+        //     var spUrl = url.split("/m/")
+        //     var newUrl = spUrl[0] + "/" + spUrl[1];
+        //     console.log('newUrlPC:', newUrl);
+        //     location.href = newUrl;
+        // }
     } else if (url.indexOf("author-") !== -1) {
         if (is_mobile && !is_mobile_url) {//go mobile url
             location.href = url.replace("author-", "m/author-");
         }
-        if (!is_mobile && is_mobile_url) { //go pc url
-            location.href = url.replace("m/author-", "author-");
-        }
+        // if (!is_mobile && is_mobile_url) { //go pc url
+        //     location.href = url.replace("m/author-", "author-");
+        // }
     } else if (url.indexOf("/top") !== -1) {
         if (is_mobile && !is_mobile_url) {//go mobile url
             var spUrl = url.split("/top");
             location.href = spUrl[0] + "/m/top.html";
         }
-        if (!is_mobile && is_mobile_url) { //go pc url
-            var spUrl = url.split("/m/")
-            var newUrl = spUrl[0] + "/top.html";
-            location.href = newUrl;
-        }
+        // if (!is_mobile && is_mobile_url) { //go pc url
+        //     var spUrl = url.split("/m/")
+        //     var newUrl = spUrl[0] + "/top.html";
+        //     location.href = newUrl;
+        // }
     } else if (url.indexOf("/bookshelfmy.html") !== -1) {
         if (is_mobile && !is_mobile_url) {//go mobile url
             var spUrl = url.split("/bookshelfmy.html");
             location.href = spUrl[0] + "/m/bookshelfmy.html";
         }
-        if (!is_mobile && is_mobile_url) { //go pc url
-            var spUrl = url.split("/m/")
-            var newUrl = spUrl[0] + "/" + spUrl[1];
-            console.log('newUrlPC:', newUrl);
-            location.href = newUrl;
-        }
+        // if (!is_mobile && is_mobile_url) { //go pc url
+        //     var spUrl = url.split("/m/")
+        //     var newUrl = spUrl[0] + "/" + spUrl[1];
+        //     console.log('newUrlPC:', newUrl);
+        //     location.href = newUrl;
+        // }
     } else if (url.indexOf("/index.html") !== -1) {
         if (is_mobile && !is_mobile_url) {//go mobile url
             var spUrl = url.split("/index.html");
