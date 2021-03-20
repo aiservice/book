@@ -5,6 +5,7 @@ g_data_ad_client = "ca-pub-4603891518763240";
 
 filterUrls = ["the-son-name.html","anzhaoshengjingxiaojingfumu.html","anzhaoshengjingxiaojingfumu.html","buyiyangderensheng.html","churentoudi.html","huodeyouya.html","pingdengzhongyouchayi-zh.html","cate-5008","category-5008","erzidemingfen-zh","biblical-theology-dictionary.html","biblical-theology-dictionary1.html","pingdengzhongyouchayi.html"];
 siteGUrls = ["aishen3"];
+siteBUrls = ["aishen3"];
 // siteAlimamaUrls = ["aishen3"];
 siteOtherUrls = ["aishen3"];
 third_opacity_css  ="opacity: 0.03;";
