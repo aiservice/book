@@ -10,3 +10,7 @@ siteOtherUrls = ["aishen","feiku","shitou"];
 
 // siteEUrls = ["feiku"];
 e_data_ad_300="3945536";
+
+site2898Urls = ["feiku"];
+ad_250_2898_img = "https://www.2898.com/upload/avatar/a8/a84b66eb6312f94b8022dd8457e3a83d.jpg";
+ad_250_2898_url = "http://p123.gysy2.com";

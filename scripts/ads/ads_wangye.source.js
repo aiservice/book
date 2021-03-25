@@ -122,6 +122,18 @@ function siteEnabledE(url) {
     return false;
 }
 
+function siteEnabled2898(url) {
+    if (typeof site2898Urls != "undefined") {
+        for (var i = 0, len = site2898Urls.length; i < len; i++) {
+            console.log(site2898Urls[i]);
+            if (url.indexOf(site2898Urls[i]) !== -1) {
+                return true;
+            }
+        }
+    }
+    return false;
+}
+
 function loadGoogleAds() {
     if (g_enabled_ads) {
         document.write('<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>');
@@ -149,7 +161,7 @@ function loadGoogleAdsRecommend() {
 function loadBaiduAds(loc) {
     var tmpId = b_data_ad_mobile;
     if ((loc === "cms_left_bottom" && !isMobile()) || loc === "pc_left_bottom") {
-         tmpId = b_data_ad_336;
+        tmpId = b_data_ad_336;
     }
     if (loc === "cms_right_bottom") {
         tmpId = b_data_ad_336_xuanting;
@@ -195,6 +207,12 @@ function loadExoAds(loc) {
     // if(loc === "m_top"){
     //     loadExoAdsTemplate(e_data_ad_mobile,"300","100")
     // }
+}
+
+function load2898Ads(loc) {
+    if (loc === "pc_right_top" && typeof ad_250_2898_url != "undefined") {
+        document.write('<div><a href="' + ad_250_2898_url + '" target="_blank"><img style="width: 250px;height: 250px;" src="' + ad_250_2898_img + '"/></a></div>');
+    }
 }
 
 function loadExoAdsTemplate(idzone, width, height) {
@@ -375,6 +393,7 @@ site_enabled_b = siteEnabledB(cur_location_url);
 console.log("site_enabled_b:" + site_enabled_b);
 site_enabled_e = siteEnabledE(cur_location_url);
 console.log("site_enabled_e:" + site_enabled_e);
+site_enabled_2898 = siteEnabled2898(cur_location_url);
 
 site_enabled_other = siteEnabledOther(cur_location_url);
 console.log("site_enabled_other:" + site_enabled_other);
