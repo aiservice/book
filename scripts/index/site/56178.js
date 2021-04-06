@@ -8,4 +8,3 @@ filterUrls = ["cate-5008","category-5008"];
 siteGUrls = ["aishen","feiku","shitou"];
 siteOtherUrls = ["aishen","feiku","shitou"];
 
-third_opacity_css  ="opacity: 0.3;"
