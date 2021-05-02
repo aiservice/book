@@ -235,7 +235,17 @@ AudioUtils = {
                     });
                 });
             } else {
-                toggleOpt(audioOpt);
+                var $audioOptSet = $("#audioOptSet");
+                audioOpt.on("click", function () {
+                    var t = $(this);
+                    if (t.hasClass("active")) {
+                        t.removeClass("active")
+                        $audioOptSet.removeClass("active")
+                    } else {
+                        t.addClass("active")
+                        $audioOptSet.addClass("active")
+                    }
+                });
             }
             var audioSpeedRange = $("#audioSpeedRange")
             rangeOptForAudio(audioSpeedRange, {
