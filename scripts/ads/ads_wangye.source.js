@@ -338,7 +338,7 @@ function redirBook(url) {
         //     console.log('newUrlPC:', newUrl);
         //     location.href = newUrl;
         // }
-    } else if (url.indexOf("/index.html") !== -1) {
+    } else if (url.indexOf("/index.html") !== -1 && url.indexOf("/client/") === -1) {
         if (is_mobile && !is_mobile_url) {//go mobile url
             var spUrl = url.split("/index.html");
             location.href = spUrl[0] + "/m/index.html";
