@@ -3,7 +3,7 @@ g_data_ad_slot_468 = "2008793013";
 g_data_ad_slot_recommend = "7657556062";
 g_data_ad_client = "ca-pub-4603891518763240";
 
-filterUrls = ["2068895.html","category-5008"];
+filterUrls = ["2068895.html","category-5008","2068895.html"];
 
 siteGUrls = ["aishen","feiku","shitou"];
 siteOtherUrls = ["aishen","feiku","shitou"];
