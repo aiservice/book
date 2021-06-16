@@ -213,6 +213,10 @@ function load2898Ads(loc) {
     if (loc === "pc_right_top" && typeof ad_250_2898_url != "undefined") {
         document.write('<div><a href="' + ad_250_2898_url + '" target="_blank"><img style="width: 250px;height: 250px;" src="' + ad_250_2898_img + '"/></a></div>');
     }
+    if (loc === "pc_left_bottom" && typeof ad_w2898_300_id != "undefined") {
+        document.writeln('<scr'+'ipt id="w2898_'+ad_w2898_300_id+'"></scr'+'ipt>');
+        (function () {var zy = document.createElement("script");var flowExchange = window.location.protocol.split(":")[0];var http = flowExchange === "https"?"https":"http";zy.src = http+"://exchange.2898.com/index/flowexchange/getGoods?id="+ad_w2898_300_id+"&sign=25bcad5f0499c64c9782b736e3d43b70";var s = document.getElementsByTagName("script");for(var i=0;i< s.length;i++){if(s[i].id){if(s[i].id == "w2898_"+ad_w2898_300_id){s[i].parentNode.insertBefore(zy, s[i]);continue;}}}})();
+    }
 }
 
 function loadExoAdsTemplate(idzone, width, height) {

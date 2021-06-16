@@ -16,7 +16,16 @@ if (typeof site_enabled_b != "undefined" && site_enabled_b && typeof site_enable
     loadAlimama("pc_left_bottom");
     document.write('</li>');
     document.write('</ul>');
-} else if (typeof site_enabled_g != "undefined" && site_enabled_g && typeof site_enabled_other != "undefined" && site_enabled_other) {
+}  else if (typeof site_enabled_g != "undefined" && site_enabled_g && typeof site_enabled_2898 != "undefined" && site_enabled_2898) {
+    document.write('<ul class="adsul">');
+    document.write('<li>');
+    loadGoogleAds();
+    document.write('</li>');
+    document.write('<li>');
+    load2898Ads("pc_left_bottom");
+    document.write('</li>');
+    document.write('</ul>');
+}else if (typeof site_enabled_g != "undefined" && site_enabled_g && typeof site_enabled_other != "undefined" && site_enabled_other) {
     document.write('<ul class="adsul">');
     document.write('<li>');
     loadGoogleAds();
