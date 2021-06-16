@@ -3495,7 +3495,7 @@ img[data-src] {
 
 .book-status .book-meta-r {
     position: relative;
-    max-width: 60%;
+    max-width: 80%;
     max-width: calc(100% - (120rem / 16));
     padding-right: .75rem
 }
