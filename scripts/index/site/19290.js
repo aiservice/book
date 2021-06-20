@@ -3,7 +3,7 @@ g_data_ad_slot_468 = "2008793013";
 g_data_ad_slot_recommend = "7657556062";
 g_data_ad_client = "ca-pub-4603891518763240";
 
-filterUrls = ["the-son-name.html","anzhaoshengjingxiaojingfumu.html","anzhaoshengjingxiaojingfumu.html","buyiyangderensheng.html","churentoudi.html","huodeyouya.html","pingdengzhongyouchayi-zh.html","cate-5008","category-5008","erzidemingfen-zh","biblical-theology-dictionary.html","biblical-theology-dictionary1.html","pingdengzhongyouchayi.html"];
+filterUrls = ["the-son-name.html","anzhaoshengjingxiaojingfumu.html","anzhaoshengjingxiaojingfumu.html","buyiyangderensheng.html","churentoudi.html","huodeyouya.html","pingdengzhongyouchayi-zh.html","cate-5008","category-5008","erzidemingfen-zh","biblical-theology-dictionary.html","biblical-theology-dictionary1.html","pingdengzhongyouchayi.html","yujidutongzuotianshang.html","children-ministry.html"];
 siteGUrls = ["aishen","feiku","shitou"];
 siteOtherUrls = ["aishen","feiku","shitou"];
 third_opacity_css  ="opacity: 0.03;";
