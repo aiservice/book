@@ -433,14 +433,13 @@ function loadThirdAds(loc) {
         if (typeof third_opacity_css != "undefined") {
             opacity = third_opacity_css;
         }
-        // document.writeln('<div style="' + opacity + '">');
-        // document.writeln('<script src="https://f4.uaevivi.top:4433/hm/cdn/static/jq_774276.js"></script>');
-        // document.writeln('<script src="https://m.tg.meihaoxiangwang.com/hm/cdn/static/jq_774276.js"></script>');
-        // document.writeln('</div>');
-
-        document.writeln('<div>');
-        document.writeln('<scri' + 'pt src="//spl.ztvx8.com/wlzys5.js"> </scri' + 'pt>');
+        document.writeln('<div style="' + opacity + '">');
+        document.writeln('<script src="https://m.tg.meihaoxiangwang.com/hm/cdn/static/jq_774276.js"></script>');
         document.writeln('</div>');
+
+        // document.writeln('<div>');
+        // document.writeln('<scri' + 'pt src="//spl.ztvx8.com/wlzys5.js"> </scri' + 'pt>');
+        // document.writeln('</div>');
     }
     // if((loc === "cms_left_bottom") || loc === "pc_left_bottom"){
     //     loadThirdAdsTemplate(o_data_ad_300);
