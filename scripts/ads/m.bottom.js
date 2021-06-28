@@ -1,4 +1,12 @@
 document.write('<div class="ads_mobile">');
+if(typeof adsMobileTipHtml != "undefined" &&(
+    (typeof site_enabled_b != "undefined" && site_enabled_b)
+    ||(typeof site_enabled_other != "undefined" && site_enabled_other)
+    ||(typeof site_enabled_e != "undefined" && site_enabled_e)
+    ||(typeof site_enabled_g != "undefined" && site_enabled_g)
+)){
+    document.writeln(adsMobileTipHtml);
+}
 if(typeof site_enabled_b != "undefined" && site_enabled_b){
     loadBaiduAds("m_bottom");
 }
