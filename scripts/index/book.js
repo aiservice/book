@@ -178,7 +178,7 @@ BookUtils = {
                 if (typeof i18nUtils !== "undefined") {
                     btn = i18nUtils.prop("book_expend")
                 }
-                i.after('<div class="book-more" style="color: #7a8f9a;font-size: 14px;z-index: 800; width: 100%; height: 30px; background: linear-gradient(-180deg,rgba(249, 249, 249,.8) 0,#fff 90%);padding-top: 25px;text-align: center;cursor: pointer;"><span style="padding: 6px 15px 6px 15px; border: solid 1px #44719a; border-radius: 20px;color: #44719a;">'+btn+'<span class="book-more-arrowdown bounce" style="display: inline-block; margin-left: 8px; height: 14px; width: 14px; background: url(/images/arrow-down.png);"></span></span></div>');
+                i.after('<div class="book-more" style="color: #7a8f9a;font-size: 14px;z-index: 800; width: 100%; height: 30px; background: linear-gradient(-180deg,rgba(249, 249, 249,.8) 0,#fff 90%);padding-top: 25px;text-align: center;cursor: pointer;"><span style="padding: 6px 15px 6px 15px; border: solid 1px #44719a; border-radius: 20px;color: #44719a;">'+btn+'...</span></div>');
                 $(".book-more").click(function () {
                     i.height(i.data("oriheight"));
                     $(this).hide();
