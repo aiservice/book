@@ -5,8 +5,8 @@ g_data_ad_client = "ca-pub-4603891518763240";
 
 filterUrls = ["19059309.html","2068895.html","category-5008","2068895.html"];
 
-siteGUrls = ["aishen","feiku","shitou"];
-siteOtherUrls = ["aishen","feiku","shitou"];
+siteGUrls = ["aishen","feiku","sobq"];
+siteOtherUrls = ["aishen","feiku","sobq"];
 
 // siteEUrls = ["feiku"];
 e_data_ad_300="3945536";

@@ -5,6 +5,6 @@ g_data_ad_client = "ca-pub-4603891518763240";
 
 filterUrls = ["cate-5008","category-5008"];
 
-siteGUrls = ["aishen","feiku","sobqg","biquge"];
-siteOtherUrls = ["aishen","feiku","sobqg","biquge"];
+siteGUrls = ["aishen","feiku","sobq"];
+siteOtherUrls = ["aishen","feiku","sobq"];
 
