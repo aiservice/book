@@ -2,7 +2,7 @@ if(typeof jQuery !== 'undefined'){
 $("#sharebaidu").removeAttr("style");
 }
 var url = window.location.href;
-if(url.indexOf("wuxia.biquge") !== -1){
+if(url.indexOf("wuxia") !== -1){
     loadJs("5cb7168f45116391");
 }else{
     loadJs("5cb6ecc1cef2aab2");

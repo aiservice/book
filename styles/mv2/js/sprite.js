@@ -313,6 +313,7 @@ BookUtils = {
         that.initCheckBookStatus();
         that.showHistory();
         setTimeout(function(){
+            if(isBot()){return;}
             that.checkIsLogin();
             that.updateBookTop();
             that.updateBookViewCount();

@@ -3,6 +3,7 @@ $(document).ready(function(){
 });
 
 function updateViewCount(){
+    if(isBot()){return;}
     var newsId = $("#news_id").val();
     $.post("/CsAjax.do?method=updateNewsViewCount", {"news_id" : newsId}, function(datas){});
 }

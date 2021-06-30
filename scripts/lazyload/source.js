@@ -242,14 +242,23 @@
 
 })(jQuery, window, document);
 
+
 $(document).ready(function () {
-    var imgSelect = $("img", "#mycontent,.wechat-list-left-index");
+    var imgSelect = $("img", "#mycontent,.wechat-list-left-index,.wechat-list-left");
     imgSelect.each(function () {
         var img = $(this);
         var src = img.attr("src");
-        img.attr("data-original",src);
-        img.removeAttr("src");
-        console.log("img:",img.html())
+        var data_src = img.attr("data-src");
+        // if(img.attr("referrerPolicy") !== "no-referrer"){
+        //     img.attr("referrerPolicy", "no-referrer");
+        // }
+        if (src && src.indexOf("mmbiz.") === -1 && src.indexOf("data:image") === -1) {
+            img.attr("data-original",src);
+            img.removeAttr("src");
+        }
+        if(data_src){
+            img.attr("data-original",data_src);
+        }
     });
     $("img.lazy").lazyload({
         threshold : 200,

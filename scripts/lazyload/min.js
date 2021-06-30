@@ -6,9 +6,16 @@ $(document).ready(function () {
     imgSelect.each(function () {
         var img = $(this);
         var src = img.attr("src");
-        if (src && src.indexOf("mmbiz.") === -1) {
+        var data_src = img.attr("data-src");
+        // if(img.attr("referrerPolicy") !== "no-referrer"){
+        //     img.attr("referrerPolicy", "no-referrer");
+        // }
+        if (src && src.indexOf("mmbiz.") === -1 && src.indexOf("data:image") === -1) {
             img.attr("data-original",src);
             img.removeAttr("src");
+        }
+        if(data_src){
+            img.attr("data-original",data_src);
         }
     });
     $("img.lazy").lazyload({

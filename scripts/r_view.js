@@ -5,7 +5,7 @@ window.img_array_view = new Array();
 // $("img").error(function () {
 //     $(this).attr("src", "/images/no_img.png");
 // });
-$("img").on('error',function () {
+$("img").on('error', function () {
     $(this).attr("src", "/images/no_img.png");
 });
 
@@ -26,6 +26,10 @@ $(document).ready(function () {
             clearTimeout(rankConfig.TIMER_Clothing);
         }
     });
+    if (typeof cur_location_url != "undefined" && cur_location_url.indexOf("wuxia") !== -1 && cur_location_url.indexOf("index.html") !== -1) {
+        var tip_html = '<div class="alert alert-danger" role="alert" style="margin-top: 10px;margin-bottom: 0;"><span class="glyphicon glyphicon-send" aria-hidden="true"></span>  Sorry we don\'t support novel reading now. </div>';
+        $("#carousel_aiisen").after(tip_html);
+    }
 });
 
 function hotlinkview(cls) {
@@ -33,18 +37,29 @@ function hotlinkview(cls) {
         var img = $(this);
         var wd = $("." + cls).width();
         var src = img.attr("src");
-        if(!src) {
+        if (!src) {
             src = img.attr("data-original");
         }
-        if (src.indexOf("mmbiz.") !== -1) {
-            //img.attr("src","//images.weserv.nl/?url="+src);
-            var ifr = create_img_iframeview(src, wd);
-            img.hide();
-            img.after(ifr);
-            img.remove();
-        }
-        if (src.indexOf("tiebapic.baidu.com") !== -1) {
-            img.attr("src",src.replace("tiebapic.baidu.com", "cdn.tieba.moujishu.com"));
+        if (src) {
+            if (src.indexOf("mmbiz.") !== -1) {
+                //img.attr("src","//images.weserv.nl/?url="+src);
+                var ifr = create_img_iframeview(src, wd);
+                img.hide();
+                img.after(ifr);
+                img.remove();
+            }
+            // else if (src.indexOf("tiebapic.baidu.com") !== -1) {
+            //     img.attr("src", src.replace("tiebapic.baidu.com", "cdn.tieba.moujishu.com"));
+            // }
+            // else if (src.indexOf("imgsrc.baidu.com") !== -1) {
+            //     img.attr("src",src.replace("imgsrc.baidu.com", "cdn.baidu.moujishu.com"));
+            // }
+            else if (src.indexOf("sinaimg.cn") !== -1) {
+                var cur_host = getHostName(src);
+                var src_tmp = src.replace(cur_host, "cdn.sina.moujishu.com");
+                src_tmp = src_tmp.replace("https://", "//");
+                img.attr("src", src_tmp).removeAttr("data-src");
+            }
         }
     });
 }
@@ -89,4 +104,14 @@ function create_img_iframeview(url, width) {
     return ifr;
 }
 
-function goTop(){$(function(){$("<style type='text/css'> .back-to-top:hover { background: linear-gradient(180deg,#455a64,#546e7a)!important; } .back-to-top { border-radius: 3px; color: #fff!important; line-height: 20px; display: none; transition: all .5s ease-in-out; background: linear-gradient(180deg,#90a4ae,#78909c); width: 40px; height: 40px; position: fixed; right: 10px; bottom: 40px; z-index: 1000001; cursor: pointer; } .back-to-top svg { position: absolute; left: 0; top: 0; right: 0; bottom: 0; width: 10px; height: 10px; margin: auto; fill: #fff; overflow: hidden; vertical-align: middle; } </style>").appendTo("head"),$("body").append('<div class="back-to-top"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" width="349.629px" height="349.629px" viewBox="0 0 349.629 349.629" xml:space="preserve"><g><g><polygon points="174.827,73.433 0,253.42 23.434,276.19 174.827,120.318 326.216,276.196 349.629,253.42   "></polygon></g></g> <g></g> <g></g> <g></g> <g></g> <g></g> <g></g> <g></g> <g></g> <g></g> <g></g> <g></g> <g></g> <g></g> <g></g> <g></g></svg></div>');var o=$(".back-to-top");$(window).scroll(function(){$(window).scrollTop()>=500?o.fadeIn():o.fadeOut()}),o.click(function(){$("html,body").animate({scrollTop:0},500)})})}
+function goTop() {
+    $(function () {
+        $("<style type='text/css'> .back-to-top:hover { background: linear-gradient(180deg,#455a64,#546e7a)!important; } .back-to-top { border-radius: 3px; color: #fff!important; line-height: 20px; display: none; transition: all .5s ease-in-out; background: linear-gradient(180deg,#90a4ae,#78909c); width: 40px; height: 40px; position: fixed; right: 10px; bottom: 40px; z-index: 1000001; cursor: pointer; } .back-to-top svg { position: absolute; left: 0; top: 0; right: 0; bottom: 0; width: 10px; height: 10px; margin: auto; fill: #fff; overflow: hidden; vertical-align: middle; } </style>").appendTo("head"), $("body").append('<div class="back-to-top"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" width="349.629px" height="349.629px" viewBox="0 0 349.629 349.629" xml:space="preserve"><g><g><polygon points="174.827,73.433 0,253.42 23.434,276.19 174.827,120.318 326.216,276.196 349.629,253.42   "></polygon></g></g> <g></g> <g></g> <g></g> <g></g> <g></g> <g></g> <g></g> <g></g> <g></g> <g></g> <g></g> <g></g> <g></g> <g></g> <g></g></svg></div>');
+        var o = $(".back-to-top");
+        $(window).scroll(function () {
+            $(window).scrollTop() >= 500 ? o.fadeIn() : o.fadeOut()
+        }), o.click(function () {
+            $("html,body").animate({scrollTop: 0}, 500)
+        })
+    })
+}
