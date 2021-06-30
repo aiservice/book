@@ -1,5 +1,7 @@
-if(typeof site_enabled_b != "undefined" && site_enabled_b && typeof site_enabled_g != "undefined" && site_enabled_g){
+if(typeof site_enabled_g != "undefined" && site_enabled_g) {
     document.writeln('<div class="v1_title"><span>Advertisements</span></div>');
+}
+if(typeof site_enabled_b != "undefined" && site_enabled_b && typeof site_enabled_g != "undefined" && site_enabled_g){
     document.write('<ul class="adsul">');
     document.write('<li>');
     loadGoogleAds();
@@ -9,7 +11,6 @@ if(typeof site_enabled_b != "undefined" && site_enabled_b && typeof site_enabled
     document.write('</li>');
     document.write('</ul>');
 }else if(typeof site_enabled_g != "undefined" && site_enabled_g && typeof site_enabled_alimama != "undefined" && site_enabled_alimama){
-    document.writeln('<div class="v1_title"><span>Advertisements</span></div>');
     document.write('<ul class="adsul">');
     document.write('<li>');
     loadGoogleAds();
@@ -19,7 +20,6 @@ if(typeof site_enabled_b != "undefined" && site_enabled_b && typeof site_enabled
     document.write('</li>');
     document.write('</ul>');
 }else if(typeof site_enabled_g != "undefined" && site_enabled_g && typeof site_enabled_other != "undefined" && site_enabled_other){
-    document.writeln('<div class="v1_title"><span>Advertisements</span></div>');
     document.write('<ul class="adsul">');
     document.write('<li>');
     loadGoogleAds();
@@ -29,7 +29,6 @@ if(typeof site_enabled_b != "undefined" && site_enabled_b && typeof site_enabled
     document.write('</li>');
     document.write('</ul>');
 }else if(typeof site_enabled_g != "undefined" && site_enabled_g && typeof site_enabled_e != "undefined" && site_enabled_e){
-    document.writeln('<div class="v1_title"><span>Advertisements</span></div>');
     document.write('<ul class="adsul">');
     document.write('<li>');
     loadGoogleAds();
@@ -39,7 +38,6 @@ if(typeof site_enabled_b != "undefined" && site_enabled_b && typeof site_enabled
     document.write('</li>');
     document.write('</ul>');
 }else if(typeof site_enabled_g != "undefined" && site_enabled_g) {
-    document.writeln('<div class="v1_title"><span>Advertisements</span></div>');
     loadGoogleAds();
 }else if(typeof site_enabled_b != "undefined" && site_enabled_b){
     loadBaiduAds("pc_left_bottom");
