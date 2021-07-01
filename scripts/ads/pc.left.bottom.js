@@ -1,4 +1,4 @@
-if(typeof site_enabled_g != "undefined" && site_enabled_g) {
+if(typeof site_enabled_g != "undefined" && site_enabled_g && typeof g_enabled_ads != "undefined" && g_enabled_ads) {
     document.writeln('<div class="v1_title"><span>Advertisements</span></div>');
 }
 if(typeof site_enabled_b != "undefined" && site_enabled_b && typeof site_enabled_g != "undefined" && site_enabled_g){
