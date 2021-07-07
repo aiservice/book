@@ -558,6 +558,9 @@ BookUtils = {
                     f.hide();
                     a.show()
                 }
+                if (i.recordCount <= 0) {
+                    a.hide()
+                }
             } else {
                 b.tip(i.msg)
             }
