@@ -1,0 +1,22 @@
+body, html {
+    height: 100%;
+    -webkit-touch-callout: none;
+}
+html body {
+    background-color: #1f2022;
+    transition: background-color .2s ease-in-out;
+}
+body, button, input, select, textarea {
+    font-family: PingFang SC,-apple-system,SF UI Text,Lucida Grande,STheiti,Microsoft YaHei,sans-serif;
+    outline: none;
+    -webkit-text-size-adjust: none;
+}
+body {
+    font-size: 12px;
+    line-height: 1.5;
+    background: #1f2022;
+    color: #eef0f4;
+}
+body, dd, dl, fieldset, form, h1, h2, h3, h4, h5, h6, legend, p, pre {
+    margin: 0;
+}

@@ -35,7 +35,7 @@ i18nUtils = {
             book_listen_tip4: "暂无音频数据",
             book_listen_tip5: "如果没有音频数据或者音频不全。您可以点击[免费阅读]->[打开章节]->[在线听合成语音]。无限制免费畅听~！",
             book_exist_in_bookshelf: "已经存在于书架中！",
-            book_bookshelf_add_success: "加入书架成功,登陆后可以同步到云端",
+            book_bookshelf_add_success: "加入书架成功!",
 
             book_audio_play: "开始播放",
             book_audio_pause: "暂停播放",
@@ -133,7 +133,7 @@ i18nUtils = {
             book_bookshelf_total_words: "Words",
             book_bookshelf_continue_reading: "Read",
             book_bookshelf_exists: "Added",
-            book_bookshelf_add_success: "Add to the shelf successfully, you can sync to the cloud after logging in",
+            book_bookshelf_add_success: "Add to the Library successfully!",
 
             book_bookshelf_year_before: "1 year ago",
             book_bookshelf_month_before: " months ago",
@@ -141,7 +141,7 @@ i18nUtils = {
             book_bookshelf_hour_before: " hours ago",
             book_bookshelf_minute_before: " minutes ago",
             book_bookshelf_just_now: "Just now",
-            book_expend: "Expand All",
+            book_expend: "View all Contents",
             book_recently_read: "Recently read",
             book_author: "Author",
             book_role: "Cast",
@@ -177,7 +177,7 @@ i18nUtils = {
             } else {
                 locale = navigator.language || navigator.userLanguage || '';
             }
-        }catch (e) {
+        } catch (e) {
 
         }
         var t = /^en/.test(locale);
