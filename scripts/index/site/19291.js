@@ -1,18 +1,18 @@
-var app_domain = "www.sobqg.com";
-var is_english = false;
-var app_link_email = "1740933979@qq.com";
-var site_id = 56178;
-var baid = "bd55e464f5f614540d14fa9f22b38b98";
-var gaid = "UA-40716497-3";
-var ctx_cdn = "";
-var cdn_api = "";
-g_data_ad_slot_auto = "2008793013";
+var app_domain = "www.feiku6.com";var is_english = false;var app_link_email = "aikefu001@outlook.com";var site_id = 19291;var baid = "f50fb8859e2d48c51beafff64e7c000d";var gaid = "UA-40716497-3";g_data_ad_slot_auto = "2008793013";
 g_data_ad_slot_468 = "2008793013";
 g_data_ad_slot_recommend = "7657556062";
 g_data_ad_client = "ca-pub-4603891518763240";
 
-filterUrls = ["cate-5008", "category-5008"];
+filterUrls = ["cate-5008","category-5008"];
+siteGUrls = ["xxx"];
+siteAlimamaUrls = ["feiku"];
 
-siteGUrls = ["aishen", "feiku", "sobq"];
-// siteGUrls = ["aishen", "feiku", "sobq", "localhost"];
-siteOtherUrls = ["aishen", "feiku", "sobq"];
+o_data_ad_300="";
+o_data_ad_300_right="";
+o_data_ad_mobile="8434150992547607260-539";
+o_data_ad_728="";
+siteOtherUrls = [];
+
+siteEUrls = ["feiku"];
+e_data_ad_300="3945536";
+
