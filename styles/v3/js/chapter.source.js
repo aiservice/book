@@ -24,7 +24,10 @@ function clsize(a) {
 }
 
 function cltheme(a) {
-    1 == a ? document.getElementById("readbg").className = "hui" : 2 == a ? document.getElementById("readbg").className = "ls" : 3 == a ? document.getElementById("readbg").className = "fs" : 4 == a ? document.getElementById("readbg").className = "nuan" : 5 == a ? document.getElementById("readbg").className = "huang" : 6 == a ? document.getElementById("readbg").className = "lan" : 7 == a && (document.getElementById("readbg").className = ""),
+    if (!a) {
+        a = 7;
+    }
+    1 == a ? document.getElementById("readbg").className = "hui" : 2 == a ? document.getElementById("readbg").className = "ls" : 3 == a ? document.getElementById("readbg").className = "fs" : 4 == a ? document.getElementById("readbg").className = "nuan" : 5 == a ? document.getElementById("readbg").className = "huang" : 6 == a ? document.getElementById("readbg").className = "lan" : 7 == a && (document.getElementById("readbg").className = "nuan"),
         $.cookie("theme", a, {
             expires: 365,
             path: "/"
@@ -45,10 +48,18 @@ jQuery.cookie = function (a, b, c) {
             } : decodeURIComponent, (f = new RegExp("(?:^|; )" + encodeURIComponent(a) + "=([^;]*)").exec(document.cookie)) ? g(f[1]) : null)
 },
     $(function () {
-        var c, a = $.cookie("fontsize"),
+        var c = $.cookie("thmoon"), a = $.cookie("fontsize"),
             b = $.cookie("theme");
+        if (b) {
+            cltheme(b);
+        } else {
+            thmoon();
+        }
+        if (c) {
+            thmoon();
+        }
         void 0 == a ? (clsize(18), a = 18) : clsize(a),
-            void 0 == b ? (cltheme(1), b = 1) : cltheme(b),
+            // void 0 == b ? (cltheme(1), b = 1) : cltheme(b),
             $("#font_inc").click(function () {
                 19 >= a && "" != a ? (a++, clsize(a)) : clsize("20")
             }),
@@ -58,8 +69,7 @@ jQuery.cookie = function (a, b, c) {
             $("#theme2").click(function () {
                 6 >= b ? (b++, cltheme(b)) : (b -= 6, cltheme(b))
             }),
-            c = $.cookie("thmoon"),
-        1 == c && thmoon(),
+            // 1 == c && thmoon(),
             $("#mode").click(function () {
                 var a = document.getElementById("readbg").getAttribute("class");
                 "gd theme-moon active" != a ? thmoon() : (cltheme(b), $.cookie("thmoon", null, {
@@ -67,4 +77,6 @@ jQuery.cookie = function (a, b, c) {
                     path: "/"
                 }))
             })
+
+
     });

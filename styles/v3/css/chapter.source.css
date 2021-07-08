@@ -364,36 +364,61 @@ ul.links a {
     background:0 0;
     margin-left:0
 }
-body.hui,.hui .mlfy_main,.hui .mlfy_page {
+body.hui{
+    background:#d3d3d1;
+    color: #49423a;
+}
+.hui .mlfy_main,.hui .mlfy_page {
     background:#dcdcdc
 }
-body.gd,.gd .mlfy_main {
-    background:#1f2022;
+body.gd{
+    background:#17181a;
     color:#d0d3d8;
+}
+.gd .mlfy_main {
+    background-color: #1f2022;
+    transition: background-color .2s ease-in-out;
 }
 .gd .mlfy_page {
     background: #353535;
 }
-body.ls,.ls .mlfy_main,.ls .mlfy_page {
-    background:#cddfcd;
-    color:#555
+body.ls{
+    background:#d3e2d1;
+    color:#49423a
 }
-body.fs,.fs .mlfy_main,.fs .mlfy_page {
-    background:#ebcece
+.ls .mlfy_main,.ls .mlfy_page {
+    background:#e1ede1;
 }
-body.nuan,.nuan .mlfy_main,.nuan .mlfy_page {
-    background:#ede7da;
+body.fs {
+    background:#ead2d1;
+    color: #49423a;
+}
+.fs .mlfy_main,.fs .mlfy_page {
+    background:#f5e4e4
+}
+body.nuan {
+    background:#ebe5d8;
     color:#4c3120
 }
-body.huang,.huang .mlfy_main,.huang .mlfy_page {
+.nuan .mlfy_main, .nuan .mlfy_page {
+    background:#f6f1e7;
+}
+body.huang {
+    background:#dfd2ab;
+    color:#4c3120
+}
+.huang .mlfy_main,.huang .mlfy_page {
     background:#e0ce9e;
-    color:#4c3120
 }
-body.lan,.lan .mlfy_main,.lan .mlfy_page {
-    background:#cfdde1
+body.lan{
+    background:#d1dcdd;
+    color: #49423a;
+}
+.lan .mlfy_main,.lan .mlfy_page {
+    background:#dfecf0
 }
 
-.ls .mlfy_page,.fs .mlfy_page, .nuan .mlfy_page, .huang .mlfy_page,.lan .mlfy_page {
+.fs .mlfy_page{
     background: #efefef;
 }
 .gd .theme {
@@ -556,7 +581,29 @@ body.lan,.lan .mlfy_main,.lan .mlfy_page {
         box-shadow:0 0 1px rgba(204,204,204,.7);
         text-decoration:none;
         margin:0 .5em
-    } .gd a{color:#fff}
+    }
+    .gd a{color:#fff}
+    body.gd{
+        background:#1f2022;
+    }
+    body.nuan  {
+        background:#f6f1e7;
+    }
+    body.huang {
+        background:#e0ce9e;
+    }
+    body.ls {
+        background:#e1ede1;
+    }
+    body.lan {
+        background:#dfecf0
+    }
+    body.hui{
+        background:#dcdcdc
+    }
+    body.fs {
+        background:#f5e4e4
+    }
     .gd .mlfy_page,.ls .mlfy_page,.fs .mlfy_page, .nuan .mlfy_page, .huang .mlfy_page,.lan .mlfy_page {
         background: none;
     }
