@@ -544,7 +544,7 @@ body.lan,.lan .mlfy_main,.lan .mlfy_page {
         box-shadow:0 0 1px rgba(204,204,204,.7);
         text-decoration:none;
         margin:0 .5em
-    }
+    } .gd a{color:#fff}
 }@media screen and (max-width:640px) {
     #main,.user_right {
         width:100%
