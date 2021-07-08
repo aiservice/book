@@ -64,15 +64,15 @@ h1,h2,h3,h4,h5,h6 {
 #TextContent a:hover {
     color:#49423a
 }
-#TextContent p,#TextContent div {
+#artWrap p,#artWrap div {
     text-indent:2em;
     word-wrap:break-word;
     word-break:break-word;
     margin:.8em 0
 }
-#TextContent img{max-width: 100% !important;height: auto;display: inline-block;}
-#TextContent p img,#TextContent div div img{margin-left: -2em;}
-#TextContent iframe, video { border: none;width: 100% !important;min-height: 250px;}
+#artWrap img{max-width: 100% !important;height: auto;display: inline-block;}
+#artWrap p img,#TextContent div div img{margin-left: -2em;}
+#artWrap iframe, video { border: none;width: 100% !important;min-height: 250px;}
 .imagecontent {
     display:block;
     width:100%;
