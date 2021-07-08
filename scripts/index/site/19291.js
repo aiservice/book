@@ -3,16 +3,16 @@ g_data_ad_slot_468 = "2008793013";
 g_data_ad_slot_recommend = "7657556062";
 g_data_ad_client = "ca-pub-4603891518763240";
 
-filterUrls = ["19059309.html","2068895.html","category-5008","2068895.html"];
+filterUrls = ["cate-5008","category-5008"];
+siteGUrls = ["feiku"];
+siteAlimamaUrls = ["feiku"];
 
-siteGUrls = ["aishen","feiku","sobq"];
-siteOtherUrls = ["aishen","feiku","sobq"];
+o_data_ad_300="";
+o_data_ad_300_right="";
+o_data_ad_mobile="8434150992547607260-539";
+o_data_ad_728="";
+siteOtherUrls = [];
 
-// siteEUrls = ["feiku"];
+siteEUrls = ["feiku"];
 e_data_ad_300="3945536";
 
-site2898Urls = ["feiku"];
-ad_250_2898_img = "https://www.2898.com/upload/avatar/a8/a84b66eb6312f94b8022dd8457e3a83d.jpg";
-ad_250_2898_url = "http://p123.gysy2.com";
-
-ad_w2898_300_id = "w2898_14899";
