@@ -367,9 +367,12 @@ ul.links a {
 body.hui,.hui .mlfy_main,.hui .mlfy_page {
     background:#dcdcdc
 }
-body.gd,.gd .mlfy_main,.gd .mlfy_page {
+body.gd,.gd .mlfy_main {
     background:#1f2022;
     color:#d0d3d8;
+}
+.gd .mlfy_page {
+    background: #353535;
 }
 body.ls,.ls .mlfy_main,.ls .mlfy_page {
     background:#cddfcd;
@@ -388,6 +391,10 @@ body.huang,.huang .mlfy_main,.huang .mlfy_page {
 }
 body.lan,.lan .mlfy_main,.lan .mlfy_page {
     background:#cfdde1
+}
+
+.ls .mlfy_page,.fs .mlfy_page, .nuan .mlfy_page, .huang .mlfy_page,.lan .mlfy_page {
+    background: #efefef;
 }
 .gd .theme {
     display:none
@@ -550,6 +557,9 @@ body.lan,.lan .mlfy_main,.lan .mlfy_page {
         text-decoration:none;
         margin:0 .5em
     } .gd a{color:#fff}
+    .gd .mlfy_page,.ls .mlfy_page,.fs .mlfy_page, .nuan .mlfy_page, .huang .mlfy_page,.lan .mlfy_page {
+        background: none;
+    }
 }@media screen and (max-width:640px) {
     #main,.user_right {
         width:100%
