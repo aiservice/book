@@ -72,7 +72,7 @@ h1,h2,h3,h4,h5,h6 {
 }
 #TextContent img{max-width: 100% !important;height: auto;display: inline-block;}
 #TextContent p img,#TextContent div div img{margin-left: -2em;}
-#TextContent iframe, video { border: none;width: 100% !important;min-height: 375px;}
+#TextContent iframe, video { border: none;width: 100% !important;min-height: 250px;}
 .imagecontent {
     display:block;
     width:100%;
