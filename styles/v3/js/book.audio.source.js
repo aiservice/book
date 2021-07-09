@@ -127,6 +127,8 @@ AudioUtils = {
         } else {
             console.log("==all audio played==");
             that.mark.$mark.unmark();
+            that.playSpeechElement.data("status", 0);
+            that.playSpeechElement.next("label").text(i18nUtils.prop("book_audio_play"));
         }
     },
     getAudioHtml:function(){
