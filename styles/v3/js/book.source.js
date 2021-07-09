@@ -440,7 +440,7 @@ BookUtils = {
                 } else {
                     $("#artWrap").html(a);
                 }
-                //AudioUtils.initPlayBar("artWrap");
+                AudioUtils.initPlayBar("artWrap");
             },
             error: function () {
                 var a = "<p style='text-align:center;' onclick='BookUtils.getChapter()'>" + i18nUtils.prop("book_load_failed") + "</p>";
