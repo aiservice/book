@@ -17,7 +17,7 @@ a {
     color:#4267b2
 }
 a:hover {
-    color:#795548
+    color:#0078d4
 }
 ul,ol,li {
     list-style:none
@@ -381,6 +381,9 @@ body.gd{
 }
 .gd .mlfy_page {
     background: #353535;
+}
+.gd .mlfy_page a{
+    color: #fff !important;
 }
 body.ls{
     background:#d3e2d1;
