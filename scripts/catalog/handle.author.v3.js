@@ -9,7 +9,7 @@ if (typeof authorList !== 'undefined') {
             if (typeof ctx_cdn !== 'undefined') {
                 img = ctx_cdn + "/" + cur.image_path;
             }
-            html += '<li class="g_col_2 g_ipad"> <div class="g_book"><a href="/book/' + cur.customer_url + '.html"><i class="g_thumb hom-thumb"><img class="lazy" data-original="' + img + '" width="140" height="186" style="display: block;"></i> <h3 class="g_h4">' + cur.book_name + '</h3></a><span class="_type">' + cur.author_name + '</span></div> </li>'
+            html += '<li class="g_col_2 g_ipad"> <div class="g_book"><a href="/book/' + cur.customer_url + '.html"><i class="g_thumb hom-thumb"><img class="lazy" data-original="' + img + '" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" width="140" height="186" style="display: block;"></i> <h3 class="g_h4">' + cur.book_name + '</h3></a><span class="_type">' + cur.author_name + '</span></div> </li>'
         }
         html += '</ul>';
         document.write(html);

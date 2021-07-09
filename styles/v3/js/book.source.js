@@ -368,32 +368,29 @@ BookUtils = {
         });
     },
     showHistory: function () {
-        var url = window.location.href;
-        if (url.indexOf("/book/") !== -1) {
-            var a = this.getBooksFromStroage(this.params.key_recently_read)
-            if (a.length > 0) {
-                var hot = $("#hot");
-                var recently_read = $("#recently-read");
-                var htmlRectPc = "";
-                var htmlRectMobile = "";
-                htmlRectPc += '<div class="g_wrap j_you_also_like_title"> <h2 class="g_h2 pb20">' + i18nUtils.prop("book_recently_read") + '</h2> </div>';
-                htmlRectPc += '<ul class="g_row hom-books boo-pop">';
-                var cdn = "";
-                if (typeof ctx_cdn !== "undefined") {
-                    cdn = ctx_cdn;
-                }
-                a.map(function (f, index) {
-                    var burl = "/book/" + f.bUrl + ".html";
-                    var bImg = cdn + "/files/book/cover/" + f.bid + "/cover.jpg";
-                    if (index < 12) {
-                        htmlRectMobile += '<li class="module-slide-li"><a href="' + burl + '" class="module-slide-a"><img src="' + bImg + '" class="module-slide-img" onerror="this.src=\'/styles/index/images/noimage.jpg\'"/> <figcaption class="module-slide-caption">' + f.bName + '</figcaption> <p class="module-slide-author" role="option"></p> </a></li>';
-                        htmlRectPc += '<li class="g_col_2 g_ipad"> <div class="g_book"><a href="' + burl + '"><i class="g_thumb hom-thumb"><img class="lazy" data-original="' + bImg + '"  width="140" height="186" style="display: block;"></i> <h3 class="g_h4">' + f.bName + '</h3></a><span class="_type">' + f.aName + '</span></div> </li>'
-                    }
-                });
-                recently_read.show().find("#ol").empty().html(htmlRectMobile);
-                htmlRectPc += '</ul>';
-                hot.after(htmlRectPc);
+        var a = this.getBooksFromStroage(this.params.key_recently_read);
+        if (a.length > 0) {
+            var hot = $("#hot");
+            var recently_read = $("#recently-read");
+            var htmlRectPc = "";
+            var htmlRectMobile = "";
+            htmlRectPc += '<div class="g_wrap j_you_also_like_title"> <h2 class="g_h2 pb20">' + i18nUtils.prop("book_recently_read") + '</h2> </div>';
+            htmlRectPc += '<ul class="g_row hom-books boo-pop">';
+            var cdn = "";
+            if (typeof ctx_cdn !== "undefined") {
+                cdn = ctx_cdn;
             }
+            a.map(function (f, index) {
+                var burl = "/book/" + f.bUrl + ".html";
+                var bImg = cdn + "/files/book/cover/" + f.bid + "/cover.jpg";
+                if (index < 12) {
+                    htmlRectMobile += '<li class="module-slide-li"><a href="' + burl + '" class="module-slide-a"><img src="' + bImg + '" class="module-slide-img" onerror="this.src=\'/styles/index/images/noimage.jpg\'"/> <figcaption class="module-slide-caption">' + f.bName + '</figcaption> <p class="module-slide-author" role="option"></p> </a></li>';
+                    htmlRectPc += '<li class="g_col_2 g_ipad"> <div class="g_book"><a href="' + burl + '"><i class="g_thumb hom-thumb"><img class="lazy" data-original="' + bImg + '" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" width="140" height="186" style="display: block;"></i> <h3 class="g_h4">' + f.bName + '</h3></a><span class="_type">' + f.aName + '</span></div> </li>'
+                }
+            });
+            recently_read.show().find("#ol").empty().html(htmlRectMobile);
+            htmlRectPc += '</ul>';
+            hot.after(htmlRectPc);
         }
     },
     removeMyfavHander: function (id) {
