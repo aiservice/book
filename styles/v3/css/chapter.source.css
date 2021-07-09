@@ -805,6 +805,7 @@ body.lan{
     background:transparent;
     margin:0;
 }
+.ads{width: auto;overflow: hidden;text-align: center;}
 .red{color: #ed424b;}
 .rank-chk {
     font-size: 22px;
