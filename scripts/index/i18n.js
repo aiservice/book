@@ -78,6 +78,10 @@ i18nUtils = {
             book_load_more: "点击加载更多",
             book_load_finished: "全部加载完成",
             book_author_books: "作者其他作品",
+            book_list: "目录",
+            book_mode_night: "夜间",
+            book_listen: "听书",
+            book_setting: "设置",
         },
         en: {
             book_read_background: "Background",
@@ -156,17 +160,22 @@ i18nUtils = {
             book_load_more: "Load more",
             book_load_finished: "All loaded",
             book_author_books: "Author's other works",
-
+            book_list: "List",
+            book_mode_night: "Night",
+            book_listen: "Listen",
+            book_setting: "Setting",
         }
     },
     prop: function (key) {
         var lang = this.getDefaultLocale();
         try {
-            return this.language[lang][key];
+            if (typeof this.language[lang][key] !== "undefined") {
+                return this.language[lang][key];
+            }
         } catch (e) {
-            return "";
-        }
 
+        }
+        return "";
     },
     getDefaultLocale: function () {
         var locale = "";

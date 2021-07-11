@@ -421,10 +421,6 @@ body.lan{
 .lan .mlfy_main,.lan .mlfy_page {
     background:#dfecf0
 }
-
-.fs .mlfy_page{
-    background: #efefef;
-}
 .gd .theme {
     display:none
 }
@@ -537,6 +533,7 @@ body.lan{
     -webkit-border-radius:8px
 }
 @media screen and (max-width:768px) {
+    .readerControls{visibility: hidden;}
     .top,.mlfy_main_l .hid,.mlfy_main_sz .hid,.fl,.mlfy_main_sz.b2 ul li .zt .hid,.mlfy_main_sz .ml,.mlfy_main_sz .btn-wrap a.grey-btn {
         display:none
     }
@@ -643,6 +640,8 @@ body.lan{
     right:0;
     bottom:0;
     left:0;
+    -webkit-transition: opacity .15s,visibility .15s;
+    transition: opacity .15s,visibility .15s;
 }
 .aside.active {
     visibility:visible;
@@ -657,10 +656,12 @@ body.lan{
     -webkit-transition:opacity .25s;
     transition:opacity .25s;
     opacity:0;
-    background-color:#000
+    background-color:#000;
 }
 .active>.aside-overlay,.active>.guide-overlay {
-    opacity:.6
+    opacity:.6;
+    -webkit-transition:none;
+    transition:none;
 }
 .aside-content,.aside-popup {
     position:absolute;
@@ -1016,75 +1017,6 @@ body.lan{
     background-color:#fff
 }
 
-/*setting*/
-
-@media (max-width: 1365px) {
-    .readerControls {
-        margin-left:428px
-    }
-}
-
-@media (max-width: 1023px) {
-    .readerControls {
-        margin-left:304px
-    }
-}
-
-@media (max-width: 767px) {
-    .readerBottomBar {
-        display:flex;
-        opacity: 0;
-        transform: translateY(56px)
-    }
-
-    .readerBottomBar.active {
-        opacity: 1;
-        transform: translate(0)
-    }
-
-    .readerBottomSettingPanel {
-        display: block
-    }
-
-    .readerBookInfo_chapterPreview,.readerControls,.readerTopBar {
-        display: none
-    }
-
-    .readerContent_ShowBookInfo .readerBookInfo {
-        padding-top: 0
-    }
-
-    .navBarOffset {
-        padding-top: 36px
-    }
-
-    .wr_page_reader .navBar {
-        display: none
-    }
-
-    .wr_page_reader .app_content_navBarOffset {
-        padding-top: 0
-    }
-
-    .wr_page_reader .navBarOffset {
-        padding-top: 36px
-    }
-
-    .bookInfo_more .bookInfo_more_rating {
-        flex: 1;
-        margin-right: 10px
-    }
-
-    .bookInfo_more .bookInfo_more_reading {
-        flex: 1
-    }
-
-    .bookInfo_more .bookInfo_more_addShelf {
-        display: none
-    }
-
-}
-
 button {
     background: none;
     border: 0;
@@ -1239,6 +1171,76 @@ button {
     margin-left: -12px;
     transition: background-image .2s ease-in-out;
 }
+
+/*setting*/
+
+@media (max-width: 1365px) {
+    .readerControls {
+        margin-left:438px
+    }
+}
+
+@media (max-width: 1023px) {
+    .readerControls {
+        margin-left:438px
+    }
+}
+
+@media (max-width: 767px) {
+    .readerBottomBar {
+        display:flex;
+        opacity: 0;
+        transform: translateY(56px)
+    }
+
+    .readerBottomBar.active {
+        opacity: 1;
+        transform: translate(0)
+    }
+
+    .readerBottomSettingPanel {
+        display: block
+    }
+
+    .readerBookInfo_chapterPreview,.readerControls,.readerTopBar {
+        display: none
+    }
+
+    .readerContent_ShowBookInfo .readerBookInfo {
+        padding-top: 0
+    }
+
+    .navBarOffset {
+        padding-top: 36px
+    }
+
+    .wr_page_reader .navBar {
+        display: none
+    }
+
+    .wr_page_reader .app_content_navBarOffset {
+        padding-top: 0
+    }
+
+    .wr_page_reader .navBarOffset {
+        padding-top: 36px
+    }
+
+    .bookInfo_more .bookInfo_more_rating {
+        flex: 1;
+        margin-right: 10px
+    }
+
+    .bookInfo_more .bookInfo_more_reading {
+        flex: 1
+    }
+
+    .bookInfo_more .bookInfo_more_addShelf {
+        display: none
+    }
+
+}
+
 
 /*set mobile css*/
 .page-read-opt,.page-read-opt.active {

@@ -18,6 +18,7 @@ function cltheme(a) {
 }
 
 $(function () {
+    BookChapterUtils.init();
     var c = BookUtils.getStorage("thmoon"), a = BookUtils.getStorage("fontsize"),
         b = BookUtils.getStorage("theme");
     if (b) {
@@ -30,25 +31,34 @@ $(function () {
     }
     void 0 == a ? (clsize(18), a = 18) : clsize(a),
         // void 0 == b ? (cltheme(1), b = 1) : cltheme(b),
-        $(".set_font_inc").click(function () {
+        $("#set_font_inc_m").click(function () {
             19 >= a && "" != a ? (a++, clsize(a)) : clsize("20")
-        }),
-        $(".set_font_dec").click(function () {
-            a >= 16 && "" != a ? (a--, clsize(a)) : clsize("15")
-        }),
-        $(".set_theme").click(function () {
-            6 >= b ? (b++, cltheme(b)) : (b -= 6, cltheme(b))
-        }),
-        // 1 == c && thmoon(),
-        $("#mode").click(function () {
-            var a = document.getElementById("readbg").getAttribute("class");
-            if ("gd theme-moon active" !== a) {
-                thmoon()
-            } else {
-                cltheme(b);
-            }
         });
-    BookChapterUtils.init();
+    $("#set_font_inc_pc").click(function () {
+        19 >= a && "" != a ? (a++, clsize(a)) : clsize("20")
+    });
+    $("#set_font_dec_m").click(function () {
+        a >= 16 && "" != a ? (a--, clsize(a)) : clsize("15")
+    });
+    $("#set_font_dec_pc").click(function () {
+        a >= 16 && "" != a ? (a--, clsize(a)) : clsize("15")
+    });
+    $("#set_theme_m").click(function () {
+        6 >= b ? (b++, cltheme(b)) : (b -= 6, cltheme(b))
+    });
+    $("#set_theme_pc").click(function () {
+        6 >= b ? (b++, cltheme(b)) : (b -= 6, cltheme(b))
+    });
+    // 1 == c && thmoon(),
+    $("#mode").click(function () {
+        var a = document.getElementById("readbg").getAttribute("class");
+        if ("gd theme-moon active" !== a) {
+            thmoon()
+        } else {
+            cltheme(b);
+        }
+    });
+
 });
 
 if (typeof BookChapterUtils == "undefined") {
@@ -61,10 +71,112 @@ BookChapterUtils = {
         settingsKey: "SET_CHAPTER"
     },
     init: function () {
+        this.loadSetting();
         this.initModes();
         this.initDayNightSetting();
         this.initFontSizeSetting();
         this.initAudio();
+    },
+    loadSetting: function () {
+        var settingPc = '<div class="readerControls">\n' +
+            '    <button class="readerControls_item" onclick="BookChapterUtils.showCatalogs()">\n' +
+            '        <svg class="icon">\n' +
+            '            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-catalog"></use>\n' +
+            '        </svg>\n' +
+            '    </button>\n' +
+            '    <button class="readerControls_item" id="set_theme_pc">\n' +
+            '        <svg class="icon">\n' +
+            '            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-color"></use>\n' +
+            '        </svg>\n' +
+            '    </button>\n' +
+            '    <div class="readerControls_fontSize">\n' +
+            '        <button class="fontSizeButton" onclick="$(\'.readerControls_fontSize\').toggleClass(\'expand\');">\n' +
+            '            <svg class="icon icon-font-set">\n' +
+            '                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-font-set"></use>\n' +
+            '            </svg>\n' +
+            '        </button>\n' +
+            '        <div class="fontSizeLabel left"  id="set_font_dec_pc"><span class="iconLeft">A-</span></div>\n' +
+            '        <div class="fontSizeLabel right" id="set_font_inc_pc"><span class="iconRight">A+</span></div>\n' +
+            '    </div>\n' +
+            '    <button class="readerControls_item dark" id="mode">\n' +
+            '        <svg class="icon icon-night">\n' +
+            '            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-day"></use>\n' +
+            '        </svg>\n' +
+            '    </button>\n' +
+            '    <button class="readerControls_item" id="audioOpt">\n' +
+            '        <svg class="icon">\n' +
+            '            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-erji"></use>\n' +
+            '        </svg>\n' +
+            '    </button>\n' +
+            '</div>';
+
+
+        var settingMobie = '<div id="pageReadOpt" class="page-read-opt" data-settings-key="r_set">\n' +
+            '    <div id="readOptSet" class="read-opt-bot read-opt-set1">\n' +
+            '        <div id="readSetSkin" class="read-set-skin">\n' +
+            '            <ul class="btn-group" role="radiogroup">\n' +
+            '                <li class="btn-group-cell read-set-cell">\n' +
+            '                    <button class="readerControls_item_mobile" id="set_theme_m">\n' +
+            '                        <svg class="icon">\n' +
+            '                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-color"></use>\n' +
+            '                        </svg>\n' +
+            '                    </button>\n' +
+            '                </li>\n' +
+            '                <li class="btn-group-cell read-set-cell">\n' +
+            '                    <button class="readerControls_item_mobile" id="set_font_dec_m">\n' +
+            '                        <svg class="icon">\n' +
+            '                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-size-down"></use>\n' +
+            '                        </svg>\n' +
+            '                    </button>\n' +
+            '                </li>\n' +
+            '                <li class="btn-group-cell read-set-cell">\n' +
+            '                    <button class="readerControls_item_mobile" id="set_font_inc_m">\n' +
+            '                        <svg class="icon">\n' +
+            '                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-size-up"></use>\n' +
+            '                        </svg>\n' +
+            '                    </button>\n' +
+            '                </li>\n' +
+            '                <li class="btn-group-cell read-set-cell">\n' +
+            '                    <button class="readerControls_item_mobile" name="StranLink" id="StranLink" onclick="StranBody()">\n' +
+            '                        简\n' +
+            '                    </button>\n' +
+            '                </li>\n' +
+            '            </ul>\n' +
+            '        </div>\n' +
+            '    </div>\n' +
+            '    <footer class="read-opt-footer">\n' +
+            '        <div class="btn-group"><a onclick="BookChapterUtils.showCatalogs()" class="btn-group-cell">\n' +
+            '            <svg class="icon icon-catalog">\n' +
+            '                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-catalog"></use>\n' +
+            '            </svg>\n' +
+            '            <h4 class="read-opt-footer-h">' + i18nUtils.prop("book_list") + '</h4>\n' +
+            '        </a> <a href="javascript:" id="readBtnSet" class="btn-group-cell jsLayerTrigger" data-rel="readOptSet" data-eid="mqd_R14" role="menuitem" aria-expanded="false">\n' +
+            '            <svg class="icon icon-font-set">\n' +
+            '                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-font-set"></use>\n' +
+            '            </svg>\n' +
+            '            <svg class="icon icon-font-set-on">\n' +
+            '                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-font-set-on"></use>\n' +
+            '            </svg>\n' +
+            '            <h4 class="read-opt-footer-h">' + i18nUtils.prop("book_setting") + '</h4>\n' +
+            '        </a> <a href="javascript:" id="readBtnMode" class="btn-group-cell" data-mode="night" role="checkbox">\n' +
+            '            <svg class="icon icon-day">\n' +
+            '                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-day"></use>\n' +
+            '            </svg>\n' +
+            '            <svg class="icon icon-night">\n' +
+            '                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-night"></use>\n' +
+            '            </svg>\n' +
+            '            <h4 class="read-opt-footer-h">' + i18nUtils.prop("book_mode_night") + '</h4>\n' +
+            '        </a>\n' +
+            '            <a id="audioOptMobile" class="btn-group-cell jsLayerTrigger">\n' +
+            '                <svg class="icon">\n' +
+            '                    <use xlink:href="#icon-erji"></use>\n' +
+            '                </svg>\n' +
+            '                <h4 class="read-opt-footer-h">' + i18nUtils.prop("book_listen") + '</h4>\n' +
+            '            </a>\n' +
+            '        </div>\n' +
+            '    </footer>\n' +
+            '</div>';
+        $("body").append(settingPc).append(settingMobie);
     },
     initModes: function () {
         var that = this, o = $("#readBtnMode");
@@ -91,7 +203,7 @@ BookChapterUtils = {
                 setTimeout(function () {
                     pageReadOpt.toggleClass("active");
                     isClick = true;
-                }, 100);
+                }, 50);
             }
             isClick = false;
         });
@@ -112,11 +224,12 @@ BookChapterUtils = {
         var that = this,
             o = $("#readBtnMode"),
             r = o.find("h4");
+        var theme = BookUtils.getStorage("theme");
         o.on("click", function () {
             var t = o.data("mode");
             console.log(t);
             if ("day" === t) {
-                cltheme(4);
+                cltheme(theme);
                 r.html(r.html().replace("日", "夜")), r.html(r.html().replace("Day", "Night"));
                 o.find(".icon-day").hide();
                 o.find(".icon-night").show();
@@ -131,6 +244,19 @@ BookChapterUtils = {
         });
         o.trigger("click");
     },
+    showCatalogs: function () {
+        var d = $("#artWrap");
+        var catalogJs = "/files/book/scripts/" + d.data("burl") + "/catalog.js";
+        var catalogHandleJs = "/scripts/catalog/handle.m.v3.js";
+        if (typeof ctx_cdn !== "undefined") {
+            catalogJs = ctx_cdn + catalogJs;
+        }
+        var cdn_static = d.data("cdn-static");
+        if (typeof cdn_static !== "undefined") {
+            catalogHandleJs = cdn_static + catalogHandleJs;
+        }
+        BookUtils.showCatalogs(catalogJs, catalogHandleJs, d.data("cid"))
+    }
 
 };
 
