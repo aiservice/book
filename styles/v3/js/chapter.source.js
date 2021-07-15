@@ -29,19 +29,43 @@ $(function () {
     if (c) {
         thmoon();
     }
-    void 0 == a ? (clsize(18), a = 18) : clsize(a),
-        // void 0 == b ? (cltheme(1), b = 1) : cltheme(b),
-        $("#set_font_inc_m").click(function () {
-            19 >= a && "" != a ? (a++, clsize(a)) : clsize("20")
-        });
+    if(a){
+        clsize(a)
+    }else{
+        clsize(18);
+        a = 18
+    }
+    $("#set_font_inc_m").click(function () {
+        if(19 >= a && "" != a){
+            a++;
+            clsize(a);
+        }else{
+            clsize("20")
+        }
+    });
     $("#set_font_inc_pc").click(function () {
-        19 >= a && "" != a ? (a++, clsize(a)) : clsize("20")
+        if(19 >= a && "" != a){
+            a++;
+            clsize(a);
+        }else{
+            clsize("20")
+        }
     });
     $("#set_font_dec_m").click(function () {
-        a >= 16 && "" != a ? (a--, clsize(a)) : clsize("15")
+        if(a >= 16 && "" != a){
+            a--;
+            clsize(a);
+        }else{
+            clsize("15")
+        }
     });
     $("#set_font_dec_pc").click(function () {
-        a >= 16 && "" != a ? (a--, clsize(a)) : clsize("15")
+        if(a >= 16 && "" != a){
+            a--;
+            clsize(a);
+        }else{
+            clsize("15")
+        }
     });
     $("#set_theme_m").click(function () {
         6 >= b ? (b++, cltheme(b)) : (b -= 6, cltheme(b))
